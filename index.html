@@ -866,7 +866,162 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: #ffb830;
   font-weight: 700;
 }
-</style>
+
+/* ═══════════════════════════════════════════════
+   ANIMATIONS & EFFECTS
+═══════════════════════════════════════════════ */
+
+/* Page load — scanline flash */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); opacity: 0.06; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(0,212,170,0.04), transparent);
+  pointer-events: none;
+  animation: scanline 1.8s ease-out forwards;
+  z-index: 9999;
+}
+
+/* Fade-in stagger for cards */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.account-card {
+  animation: fadeUp 0.5s ease both;
+}
+.account-card:nth-child(1) { animation-delay: 0.05s; }
+.account-card:nth-child(2) { animation-delay: 0.12s; }
+.account-card:nth-child(3) { animation-delay: 0.19s; }
+.account-card:nth-child(4) { animation-delay: 0.26s; }
+
+.stat-box {
+  animation: fadeUp 0.5s ease both;
+}
+.stat-box:nth-child(1) { animation-delay: 0.1s; }
+.stat-box:nth-child(2) { animation-delay: 0.15s; }
+.stat-box:nth-child(3) { animation-delay: 0.2s; }
+.stat-box:nth-child(4) { animation-delay: 0.25s; }
+.stat-box:nth-child(5) { animation-delay: 0.3s; }
+
+.chart-card, .rules-card, .table-card,
+.sequence-wrap, .risk-card {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.35s;
+}
+
+/* Card hover — glow per account color */
+.account-card.lucid:hover  { border-color: rgba(0,212,170,0.5); box-shadow: 0 0 18px rgba(0,212,170,0.08); }
+.account-card.blusky:hover { border-color: rgba(77,166,255,0.5); box-shadow: 0 0 18px rgba(77,166,255,0.08); }
+.account-card.apex:hover   { border-color: rgba(255,140,66,0.5); box-shadow: 0 0 18px rgba(255,140,66,0.08); }
+.account-card.alpha:hover  { border-color: rgba(255,68,136,0.5); box-shadow: 0 0 18px rgba(255,68,136,0.08); }
+.account-card { transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s; }
+.account-card:hover { transform: translateY(-2px); }
+
+/* Top bar shimmer on hover */
+.account-card::before {
+  transition: opacity 0.3s;
+  opacity: 0.7;
+}
+.account-card:hover::before { opacity: 1; }
+
+/* Circuit breaker — pulse when STOP */
+@keyframes pulse-stop {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.cb-stop { animation: pulse-stop 1.2s ease-in-out infinite; }
+
+/* Circuit breaker — blink border when STOP */
+@keyframes border-alert {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: rgba(255,64,96,0.4); }
+}
+.circuit-breaker.is-stop {
+  animation: border-alert 1.4s ease-in-out infinite;
+}
+
+/* DD bar — smooth fill on load (overrides inline) */
+.dd-bar-fill, .withdrawal-bar-fill {
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Heatmap cells — stagger fade in */
+@keyframes cellIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.heatmap-cell {
+  animation: cellIn 0.35s ease both;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.heatmap-cell:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 8px rgba(255,255,255,0.06);
+  z-index: 2;
+  position: relative;
+}
+
+/* Sequence nodes — stagger */
+@keyframes nodeIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.seq-node { animation: nodeIn 0.3s ease both; }
+
+/* Header total P&L — subtle glow */
+.total-pnl-header .value {
+  text-shadow: 0 0 20px rgba(0,212,170,0.25);
+  transition: text-shadow 0.3s;
+}
+.total-pnl-header .value:hover {
+  text-shadow: 0 0 30px rgba(0,212,170,0.5);
+}
+
+/* Session badge — breathing border */
+@keyframes breathe {
+  0%, 100% { border-color: var(--border2); }
+  50%       { border-color: rgba(0,212,170,0.35); }
+}
+.session-badge {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Table rows — hover highlight */
+table.trade-table tr:hover td {
+  background: rgba(255,255,255,0.025);
+  transition: background 0.15s;
+}
+
+/* Section titles — fade in left */
+@keyframes titleIn {
+  from { opacity: 0; letter-spacing: 0.35em; }
+  to   { opacity: 1; letter-spacing: 0.2em; }
+}
+.section-title {
+  animation: titleIn 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+/* Filter tabs */
+.filter-tab {
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+/* Withdrawal bar — glow */
+.withdrawal-bar-fill {
+  box-shadow: 0 0 8px rgba(0,212,170,0.3);
+}
+
+/* Scrollbar glow */
+::-webkit-scrollbar-thumb:hover { background: rgba(0,212,170,0.3); }
+
 </head>
 <body>
 
@@ -1938,10 +2093,82 @@ function filterTrades(filter, btn) {
 
 // ─── ANIMATE BARS ─────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  // Animate DD and withdrawal bars
   document.querySelectorAll('.dd-bar-fill, .withdrawal-bar-fill').forEach(bar => {
     const target = bar.style.width;
     bar.style.width = '0%';
-    setTimeout(() => { bar.style.width = target; }, 300);
+    setTimeout(() => { bar.style.width = target; }, 400);
+  });
+
+  // Counter animation for balance values
+  function animateCounter(el, target, prefix = '', suffix = '', duration = 1200) {
+    const start = 0;
+    const startTime = performance.now();
+    const isNeg = target < 0;
+    const abs = Math.abs(target);
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = abs * ease;
+      const formatted = current.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      el.textContent = prefix + (isNeg ? '-' : '') + '$' + formatted + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + (isNeg ? '-' : '') + '$' + abs.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Animate balance values
+  setTimeout(() => {
+    const balanceMap = [
+      { sel: '.account-card.lucid .balance-value',  val: 50590.00 },
+      { sel: '.account-card.blusky .balance-value', val: 50946.00 },
+      { sel: '.account-card.apex .balance-value',   val: 50901.68 },
+      { sel: '.account-card.alpha .balance-value',  val: 49092.64 },
+    ];
+    balanceMap.forEach(({ sel, val }) => {
+      const el = document.querySelector(sel);
+      if (el) animateCounter(el, val, '', '', 1400);
+    });
+  }, 300);
+
+  // Animate portfolio P&L header
+  setTimeout(() => {
+    const el = document.getElementById('total-portfolio-pnl');
+    if (el) {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.4s';
+      setTimeout(() => { el.style.opacity = '1'; }, 100);
+    }
+  }, 200);
+
+  // Circuit breaker — add is-stop class if status is STOP
+  const statusEl = document.getElementById('cb-status');
+  const cbEl = document.querySelector('.circuit-breaker');
+  if (statusEl && cbEl && statusEl.textContent.trim() === 'STOP') {
+    cbEl.classList.add('is-stop');
+  }
+
+  // Stagger heatmap cells
+  document.querySelectorAll('.heatmap-cell').forEach((cell, i) => {
+    cell.style.animationDelay = `${0.02 * i}s`;
+  });
+
+  // Stagger sequence nodes
+  document.querySelectorAll('.seq-node').forEach((node, i) => {
+    node.style.animationDelay = `${0.03 * i + 0.4}s`;
+    node.style.opacity = '0';
+    node.style.animation = `nodeIn 0.3s ease ${0.03 * i + 0.4}s both`;
+  });
+
+  // Seq connectors fade
+  document.querySelectorAll('.seq-connector').forEach((c, i) => {
+    c.style.opacity = '0';
+    setTimeout(() => {
+      c.style.transition = 'opacity 0.2s';
+      c.style.opacity = '1';
+    }, (i * 30) + 600);
   });
 });
 </script>
