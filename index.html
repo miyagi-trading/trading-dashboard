@@ -881,7 +881,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       <div class="value" id="total-portfolio-pnl">+$1,530.32</div>
     </div>
     <div class="date-display">
-      <div id="current-date">24 MAR 2026</div>
+      <div id="current-date"></div>
       <div id="current-time" style="font-size:13px; color: var(--lucid);"></div>
     </div>
   </div>
@@ -898,11 +898,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
     <div class="cb-status">
       <div class="cb-item">
         <div class="cb-item-label">Trades Hoy</div>
-        <div class="cb-item-value cb-warn" id="cb-trades-today">2</div>
+        <div class="cb-item-value cb-warn" id="cb-trades-today">4</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Pérdidas Hoy</div>
-        <div class="cb-item-value cb-ok" id="cb-losses-today">0</div>
+        <div class="cb-item-value cb-stop" id="cb-losses-today">2</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">P&L Hoy</div>
@@ -910,7 +910,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Estado</div>
-        <div class="cb-item-value cb-ok" id="cb-status">ACTIVO</div>
+        <div class="cb-item-value cb-stop" id="cb-status">STOP</div>
       </div>
     </div>
   </div>
@@ -1123,13 +1123,13 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   <div class="stats-row">
     <div class="stat-box">
       <div class="s-label">Total Trades</div>
-      <div class="s-value" style="color: var(--text);">28</div>
+      <div class="s-value" style="color: var(--text);">29</div>
       <div class="s-sub">desde 12 mar 2026</div>
     </div>
     <div class="stat-box">
       <div class="s-label">Win Rate Global</div>
-      <div class="s-value" style="color: var(--win);">62.5%</div>
-      <div class="s-sub">15W / 9L</div>
+      <div class="s-value" style="color: var(--win);">58.6%</div>
+      <div class="s-sub">17W / 11L</div>
     </div>
     <div class="stat-box">
       <div class="s-label">P&L Total CSVs</div>
@@ -1143,8 +1143,8 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
     </div>
     <div class="stat-box">
       <div class="s-label">Daily P&L Hoy</div>
-      <div class="s-value" style="color: var(--win);">+$1,436</div>
-      <div class="s-sub">24 mar 2026</div>
+      <div class="s-value" style="color: var(--win);">+$48</div>
+      <div class="s-sub" id="today-date-label"></div>
     </div>
   </div>
 
@@ -1307,56 +1307,56 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       <tbody id="trade-tbody">
         <!-- LUCID TRADES -->
         <tr class="trade-row" data-account="lucid" data-result="loss">
-          <td>3/12/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>12/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-short">SHORT</span></td><td>3c</td>
           <td>24,681.50</td><td>24,712.25</td>
           <td class="pnl-loss">-30.75</td><td class="pnl-loss">-$184.50</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/12/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>12/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-short">SHORT</span></td><td>3c</td>
           <td>24,692.25</td><td>24,662.25</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$180.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/13/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>13/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>3c</td>
           <td>24,663.75</td><td>24,693.75</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$180.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="loss">
-          <td>3/16/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>16/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>3c</td>
           <td>24,908.75</td><td>24,878.00</td>
           <td class="pnl-loss">-30.75</td><td class="pnl-loss">-$184.50</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/17/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>17/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>3c</td>
           <td>25,017.50</td><td>25,047.50</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$180.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/19/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>19/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>4c</td>
           <td>24,462.00</td><td>24,492.00</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$240.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="loss">
-          <td>3/20/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>20/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>4c</td>
           <td>24,321.50</td><td>24,291.50</td>
           <td class="pnl-loss">-30.00</td><td class="pnl-loss">-$240.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/24/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-long">LONG</span></td><td>4c</td>
           <td>24,201.50</td><td>24,231.50</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$240.00</td>
@@ -1364,56 +1364,56 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </tr>
         <!-- BLUSKY TRADES -->
         <tr class="trade-row" data-account="blusky" data-result="win">
-          <td>3/16/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>16/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,862.50</td><td>24,892.50</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$480.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="win">
-          <td>3/17/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>17/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,981.00</td><td>25,011.00</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$480.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="loss">
-          <td>3/13/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>13/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,528.00</td><td>24,520.75</td>
           <td class="pnl-loss">-7.25</td><td class="pnl-loss">-$116.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="loss">
-          <td>3/19/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>19/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,429.25</td><td>24,398.75</td>
           <td class="pnl-loss">-30.50</td><td class="pnl-loss">-$488.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="win">
-          <td>3/19/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>19/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,439.25</td><td>24,469.25</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$480.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="win">
-          <td>3/19/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>19/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,470.25</td><td>24,468.00</td>
           <td class="pnl-win">+2.25</td><td class="pnl-win">+$36.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="loss">
-          <td>3/20/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>20/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,320.00</td><td>24,291.50</td>
           <td class="pnl-loss">-28.50</td><td class="pnl-loss">-$456.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="win">
-          <td>3/24/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,202.25</td><td>24,231.50</td>
           <td class="pnl-win">+29.25</td><td class="pnl-win">+$468.00</td>
@@ -1421,42 +1421,42 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </tr>
         <!-- APEX TRADES -->
         <tr class="trade-row" data-account="apex" data-result="win">
-          <td>3/18/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>18/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,953.50</td><td>24,893.75</td>
           <td class="pnl-win">+59.75</td><td class="pnl-win">+$956.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="win">
-          <td>3/19/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>19/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,453.25</td><td>24,483.25</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$480.00</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="loss">
-          <td>3/20/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>20/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,321.75</td><td>24,291.50</td>
           <td class="pnl-loss">-30.25</td><td class="pnl-loss">-$484.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="neutral">
-          <td>3/20/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>20/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,266.50</td><td>24,266.50</td>
           <td class="pnl-neutral">0.00</td><td class="pnl-neutral">$0.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="loss">
-          <td>3/24/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,285.25</td><td>24,284.25</td>
           <td class="pnl-loss">-1.00</td><td class="pnl-loss">-$16.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="win">
-          <td>3/24/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,202.00</td><td>24,232.00</td>
           <td class="pnl-win">+30.00</td><td class="pnl-win">+$480.00</td>
@@ -1464,21 +1464,21 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </tr>
         <!-- ALPHA TRADES -->
         <tr class="trade-row" data-account="alpha" data-result="loss">
-          <td>3/20/26</td><td><span class="td-account acc-alpha">ALPHA</span></td>
+          <td>20/03/2026</td><td><span class="td-account acc-alpha">ALPHA</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,255.00</td><td>24,285.00</td>
           <td class="pnl-loss">-30.00</td><td class="pnl-loss">-$480.00</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="alpha" data-result="win">
-          <td>3/24/26</td><td><span class="td-account acc-alpha">ALPHA</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-alpha">ALPHA</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,282.50</td><td>24,284.25</td>
           <td class="pnl-win">+1.75</td><td class="pnl-win">+$28.00</td>
           <td><span class="exit-win">Stop</span></td>
         </tr>
         <tr class="trade-row" data-account="alpha" data-result="win">
-          <td>3/24/26</td><td><span class="td-account acc-alpha">ALPHA</span></td>
+          <td>24/03/2026</td><td><span class="td-account acc-alpha">ALPHA</span></td>
           <td><span class="side-long">LONG</span></td><td>8c</td>
           <td>24,201.50</td><td>24,232.00</td>
           <td class="pnl-win">+30.50</td><td class="pnl-win">+$488.00</td>
@@ -1486,28 +1486,28 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </tr>
         <!-- 3/25/26 — primer día sistema parciales -->
         <tr class="trade-row" data-account="lucid" data-result="win">
-          <td>3/25/26</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td>25/03/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
           <td><span class="side-short">SHORT</span></td><td>4c</td>
           <td>24,498.00</td><td>24,444.75</td>
           <td class="pnl-win">+53.25</td><td class="pnl-win">+$329.00</td>
           <td><span class="exit-win">Parcial+Runner</span></td>
         </tr>
         <tr class="trade-row" data-account="apex" data-result="win">
-          <td>3/25/26</td><td><span class="td-account acc-apex">APEX</span></td>
+          <td>25/03/2026</td><td><span class="td-account acc-apex">APEX</span></td>
           <td><span class="side-short">SHORT</span></td><td>4c</td>
           <td>24,498.00</td><td>24,438.50</td>
           <td class="pnl-win">+59.50</td><td class="pnl-win">+$705.68</td>
           <td><span class="exit-win">Limit</span></td>
         </tr>
         <tr class="trade-row" data-account="blusky" data-result="loss">
-          <td>3/25/26</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td>25/03/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,452.50</td><td>24,482.63</td>
           <td class="pnl-loss">-30.13</td><td class="pnl-loss">-$492.40</td>
           <td><span class="exit-loss">Stop ⚠ copiador</span></td>
         </tr>
         <tr class="trade-row" data-account="alpha" data-result="loss">
-          <td>3/25/26</td><td><span class="td-account acc-alpha">ALPHA</span></td>
+          <td>25/03/2026</td><td><span class="td-account acc-alpha">ALPHA</span></td>
           <td><span class="side-short">SHORT</span></td><td>8c</td>
           <td>24,449.25</td><td>24,479.25</td>
           <td class="pnl-loss">-30.00</td><td class="pnl-loss">-$494.56</td>
@@ -1524,7 +1524,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
     <div class="sequence-meta">
       <div class="seq-stat">
         <div class="seq-stat-label">Total trades</div>
-        <div class="seq-stat-value" style="color:var(--text)">24</div>
+        <div class="seq-stat-value" style="color:var(--text)">29</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Racha actual</div>
@@ -1536,11 +1536,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Peor racha L</div>
-        <div class="seq-stat-value" style="color:var(--loss)">L3</div>
+        <div class="seq-stat-value" style="color:var(--loss)">L2</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Ratio W:L</div>
-        <div class="seq-stat-value" style="color:var(--text)">15:9</div>
+        <div class="seq-stat-value" style="color:var(--text)">17:11</div>
       </div>
       <div style="display:flex; align-items:center; margin-left:auto;">
         <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 2 wins</span>
@@ -1593,9 +1593,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       <!-- LUCID row -->
       <div class="heatmap-row">
         <div class="heatmap-acc-label" style="color:var(--lucid)">LUCID</div>
-        <div class="heatmap-cell loss" title="-$184.50">-$185</div>
+        <div class="heatmap-cell loss" title="-$4">-$4</div>
         <div class="heatmap-cell win" title="+$180">+$180</div>
-        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss" title="-$184">-$184</div>
         <div class="heatmap-cell win" title="+$180">+$180</div>
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell win" title="+$240">+$240</div>
@@ -1610,13 +1610,14 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-acc-label" style="color:var(--blusky)">BLUSKY</div>
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell loss" title="-$116">-$116</div>
-        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell win" title="+$480">+$480</div>
         <div class="heatmap-cell win" title="+$480">+$480</div>
         <div class="heatmap-cell empty">—</div>
-        <div class="heatmap-cell win" title="+$480+$36">+$516</div>
+        <div class="heatmap-cell win" title="+$28">+$28</div>
         <div class="heatmap-cell loss" title="-$456">-$456</div>
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell win" title="+$468">+$468</div>
+        <div class="heatmap-cell loss" title="-$492">-$492</div>
       </div>
 
       <!-- APEX row -->
@@ -1629,8 +1630,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell win" title="+$956">+$956</div>
         <div class="heatmap-cell win" title="+$480">+$480</div>
         <div class="heatmap-cell loss" title="-$484">-$484</div>
-        <div class="heatmap-cell loss" title="-$16">-$16</div>
-        <div class="heatmap-cell win" title="+$480">+$480</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell win" title="+$464">+$464</div>
+        <div class="heatmap-cell win" title="+$706">+$706</div>
       </div>
 
       <!-- ALPHA row -->
@@ -1645,20 +1647,22 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell loss" title="-$480">-$480</div>
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell win" title="+$516">+$516</div>
+        <div class="heatmap-cell loss" title="-$495">-$495</div>
       </div>
 
       <!-- TOTAL row -->
       <div class="heatmap-row" style="margin-top:6px; padding-top:6px; border-top:1px solid var(--border);">
         <div class="heatmap-acc-label" style="color:var(--text-muted)">TOTAL</div>
-        <div class="heatmap-cell loss">-$185</div>
+        <div class="heatmap-cell loss">-$4</div>
         <div class="heatmap-cell win">+$64</div>
-        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell win">+$296</div>
         <div class="heatmap-cell win">+$660</div>
         <div class="heatmap-cell win">+$956</div>
-        <div class="heatmap-cell win">+$1,236</div>
-        <div class="heatmap-cell loss">-$1,180</div>
-        <div class="heatmap-cell loss">-$16</div>
-        <div class="heatmap-cell win">+$1,436</div>
+        <div class="heatmap-cell win">+$748</div>
+        <div class="heatmap-cell loss">-$1,660</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell win">+$1,688</div>
+        <div class="heatmap-cell win">+$48</div>
       </div>
     </div>
   </div>
@@ -1808,8 +1812,18 @@ const TRADES = [
 const ACC_COLOR = { lucid:'#00d4aa', blusky:'#4da6ff', apex:'#ff8c42', alpha:'#ff4488' };
 const ACC_LABEL = { lucid:'LUCID', blusky:'BLUSKY', apex:'APEX', alpha:'ALPHA' };
 
-// Sort by date order (approximate by index since dates are pre-sorted)
-const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26'];
+// Date order — dd/mm/aa format for display
+const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26','3/25/26'];
+
+function fmtDate(d) {
+  // Convert m/d/yy → dd/mm/20yy
+  const parts = d.split('/');
+  const dd = parts[1].padStart(2,'0');
+  const mm = parts[0].padStart(2,'0');
+  const yy = '20' + parts[2];
+  return `${dd}/${mm}/${yy}`;
+}
+
 const sorted = [...TRADES].sort((a,b) => DATE_ORDER.indexOf(a.date) - DATE_ORDER.indexOf(b.date));
 
 // Build sequence timeline
@@ -1838,7 +1852,7 @@ function buildSequence() {
       </div>
       <div class="seq-dot-acc" style="background:${ACC_COLOR[t.acc]}"></div>
       <div class="seq-tooltip">
-        <div style="color:${ACC_COLOR[t.acc]};font-weight:700;margin-bottom:2px;">${ACC_LABEL[t.acc]} · ${t.date}</div>
+        <div style="color:${ACC_COLOR[t.acc]};font-weight:700;margin-bottom:2px;">${ACC_LABEL[t.acc]} · ${fmtDate(t.date)}</div>
         <div>${t.side === 'B' ? 'LONG' : 'SHORT'} ${t.c}c</div>
         <div>In: ${t.entry.toFixed(2)} → Out: ${t.exit.toFixed(2)}</div>
         <div style="color:${t.pnl >= 0 ? '#00d4aa' : '#ff4060'};font-weight:700;margin-top:2px;">${pnlStr} · ${t.via}</div>
@@ -1894,6 +1908,17 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// ─── DYNAMIC DATE ─────────────────────────────────────────────────────────────
+(function() {
+  const now = new Date();
+  const opts = { day: '2-digit', month: 'short', year: 'numeric' };
+  const dateStr = new Intl.DateTimeFormat('es-AR', opts).format(now).toUpperCase();
+  const d = document.getElementById('current-date');
+  const l = document.getElementById('today-date-label');
+  if (d) d.textContent = dateStr;
+  if (l) l.textContent = dateStr;
+})();
 
 // ─── FILTER TRADES ────────────────────────────────────────────────────────────
 function filterTrades(filter, btn) {
