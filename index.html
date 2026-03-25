@@ -29,9 +29,9 @@
   --mono: 'Space Mono', monospace;
   --sans: 'DM Sans', sans-serif;
 }
-
+ 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 body {
   background: var(--bg);
   color: var(--text);
@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
+ 
 /* HEADER */
 .header {
   padding: 20px 32px;
@@ -52,13 +52,13 @@ body {
   top: 0;
   z-index: 100;
 }
-
+ 
 .header-left {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
+ 
 .logo {
   font-family: var(--mono);
   font-size: 11px;
@@ -67,11 +67,11 @@ body {
   color: var(--text-muted);
   text-transform: uppercase;
 }
-
+ 
 .logo span {
   color: var(--lucid);
 }
-
+ 
 .session-badge {
   font-family: var(--mono);
   font-size: 10px;
@@ -81,17 +81,17 @@ body {
   border-radius: 2px;
   letter-spacing: 0.08em;
 }
-
+ 
 .header-right {
   display: flex;
   align-items: center;
   gap: 24px;
 }
-
+ 
 .total-pnl-header {
   text-align: right;
 }
-
+ 
 .total-pnl-header .label {
   font-size: 10px;
   color: var(--text-dim);
@@ -99,28 +99,28 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
+ 
 .total-pnl-header .value {
   font-family: var(--mono);
   font-size: 20px;
   font-weight: 700;
   color: var(--win);
 }
-
+ 
 .date-display {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--text-dim);
   text-align: right;
 }
-
+ 
 /* MAIN */
 .main {
   padding: 24px 32px;
   max-width: 1400px;
   margin: 0 auto;
 }
-
+ 
 /* SECTION HEADERS */
 .section-title {
   font-family: var(--mono);
@@ -134,24 +134,24 @@ body {
   align-items: center;
   gap: 12px;
 }
-
+ 
 .section-title::after {
   content: '';
   flex: 1;
   height: 1px;
   background: var(--border);
 }
-
+ 
 /* ACCOUNT CARDS GRID */
 .accounts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-
+ 
 @media (max-width: 1200px) { .accounts-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 700px) { .accounts-grid { grid-template-columns: 1fr; } }
-
+ 
 .account-card {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -162,9 +162,9 @@ body {
   cursor: pointer;
   transition: border-color 0.2s;
 }
-
+ 
 .account-card:hover { border-color: var(--border2); }
-
+ 
 .account-card::before {
   content: '';
   position: absolute;
@@ -173,31 +173,31 @@ body {
   right: 0;
   height: 2px;
 }
-
+ 
 .account-card.lucid::before { background: var(--lucid); }
 .account-card.blusky::before { background: var(--blusky); }
 .account-card.apex::before { background: var(--apex); }
 .account-card.alpha::before { background: var(--alpha); }
-
+ 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 16px;
 }
-
+ 
 .card-name {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
-
+ 
 .card-name.lucid { color: var(--lucid); }
 .card-name.blusky { color: var(--blusky); }
 .card-name.apex { color: var(--apex); }
 .card-name.alpha { color: var(--alpha); }
-
+ 
 .card-type {
   font-size: 9px;
   font-family: var(--mono);
@@ -206,14 +206,14 @@ body {
   border-radius: 2px;
   text-transform: uppercase;
 }
-
+ 
 .type-funded { background: rgba(0,212,170,0.12); color: var(--lucid); border: 1px solid rgba(0,212,170,0.3); }
 .type-eval { background: rgba(77,166,255,0.08); color: var(--text-muted); border: 1px solid var(--border2); }
-
+ 
 .balance-display {
   margin-bottom: 16px;
 }
-
+ 
 .balance-label {
   font-size: 10px;
   color: var(--text-dim);
@@ -222,7 +222,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 4px;
 }
-
+ 
 .balance-value {
   font-family: var(--mono);
   font-size: 24px;
@@ -230,27 +230,27 @@ body {
   color: var(--text);
   line-height: 1;
 }
-
+ 
 .balance-delta {
   font-family: var(--mono);
   font-size: 11px;
   margin-top: 4px;
 }
-
+ 
 .delta-pos { color: var(--win); }
 .delta-neg { color: var(--loss); }
-
+ 
 /* DD BAR */
 .dd-section {
   margin-bottom: 12px;
 }
-
+ 
 .dd-label-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
 }
-
+ 
 .dd-label {
   font-size: 10px;
   color: var(--text-dim);
@@ -258,34 +258,34 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-
+ 
 .dd-value {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
 }
-
+ 
 .dd-ok { color: var(--win); }
 .dd-warn { color: #ffb830; }
 .dd-danger { color: var(--loss); }
-
+ 
 .dd-bar-track {
   height: 4px;
   background: var(--border);
   border-radius: 2px;
   overflow: hidden;
 }
-
+ 
 .dd-bar-fill {
   height: 100%;
   border-radius: 2px;
   transition: width 0.4s ease;
 }
-
+ 
 .fill-ok { background: var(--win); }
 .fill-warn { background: #ffb830; }
 .fill-danger { background: var(--loss); }
-
+ 
 /* CARD STATS */
 .card-stats {
   display: grid;
@@ -295,11 +295,11 @@ body {
   padding-top: 14px;
   border-top: 1px solid var(--border);
 }
-
+ 
 .stat-item {
   text-align: center;
 }
-
+ 
 .stat-label {
   font-size: 9px;
   color: var(--text-dim);
@@ -308,13 +308,13 @@ body {
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-
+ 
 .stat-value {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 700;
 }
-
+ 
 /* WITHDRAWAL TARGET (Lucid only) */
 .withdrawal-section {
   margin-top: 12px;
@@ -323,7 +323,7 @@ body {
   border: 1px solid rgba(0,212,170,0.15);
   border-radius: 3px;
 }
-
+ 
 .withdrawal-label {
   font-size: 9px;
   font-family: var(--mono);
@@ -332,30 +332,30 @@ body {
   text-transform: uppercase;
   margin-bottom: 6px;
 }
-
+ 
 .withdrawal-progress {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
 }
-
+ 
 .withdrawal-current { font-family: var(--mono); font-size: 12px; color: var(--lucid); font-weight: 700; }
 .withdrawal-target { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
-
+ 
 .withdrawal-bar-track {
   height: 3px;
   background: var(--border);
   border-radius: 2px;
   overflow: hidden;
 }
-
+ 
 .withdrawal-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--lucid), #00ffcc);
   border-radius: 2px;
 }
-
+ 
 .withdrawal-remaining {
   font-size: 9px;
   font-family: var(--mono);
@@ -363,16 +363,16 @@ body {
   margin-top: 5px;
   text-align: right;
 }
-
+ 
 /* ANALYTICS ROW */
 .analytics-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 14px;
 }
-
+ 
 @media (max-width: 1000px) { .analytics-grid { grid-template-columns: 1fr 1fr; } }
-
+ 
 /* EQUITY CHART */
 .chart-card {
   background: var(--bg2);
@@ -380,7 +380,7 @@ body {
   border-radius: 4px;
   padding: 20px;
 }
-
+ 
 .chart-title {
   font-family: var(--mono);
   font-size: 11px;
@@ -389,17 +389,17 @@ body {
   text-transform: uppercase;
   margin-bottom: 16px;
 }
-
+ 
 .equity-chart-area {
   height: 160px;
   position: relative;
 }
-
+ 
 svg.equity-svg {
   width: 100%;
   height: 100%;
 }
-
+ 
 /* RULES PANEL */
 .rules-card {
   background: var(--bg2);
@@ -407,7 +407,7 @@ svg.equity-svg {
   border-radius: 4px;
   padding: 20px;
 }
-
+ 
 .rule-item {
   display: flex;
   align-items: flex-start;
@@ -415,9 +415,9 @@ svg.equity-svg {
   padding: 8px 0;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .rule-item:last-child { border-bottom: none; }
-
+ 
 .rule-dot {
   width: 6px;
   height: 6px;
@@ -426,22 +426,22 @@ svg.equity-svg {
   flex-shrink: 0;
   background: var(--lucid);
 }
-
+ 
 .rule-dot.warn { background: #ffb830; }
 .rule-dot.neutral { background: var(--text-dim); }
-
+ 
 .rule-text {
   font-size: 12px;
   color: var(--text);
   line-height: 1.4;
 }
-
+ 
 .rule-text strong {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--lucid);
 }
-
+ 
 /* TRADE LOG TABLE */
 .table-card {
   background: var(--bg2);
@@ -449,7 +449,7 @@ svg.equity-svg {
   border-radius: 4px;
   overflow: hidden;
 }
-
+ 
 .table-header-row {
   display: flex;
   justify-content: space-between;
@@ -457,12 +457,12 @@ svg.equity-svg {
   padding: 16px 20px;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .table-filter-tabs {
   display: flex;
   gap: 4px;
 }
-
+ 
 .filter-tab {
   font-family: var(--mono);
   font-size: 10px;
@@ -476,18 +476,18 @@ svg.equity-svg {
   transition: all 0.15s;
   text-transform: uppercase;
 }
-
+ 
 .filter-tab:hover, .filter-tab.active {
   background: var(--border2);
   color: var(--text);
   border-color: var(--border2);
 }
-
+ 
 table.trade-table {
   width: 100%;
   border-collapse: collapse;
 }
-
+ 
 table.trade-table th {
   font-family: var(--mono);
   font-size: 9px;
@@ -499,7 +499,7 @@ table.trade-table th {
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
-
+ 
 table.trade-table td {
   font-family: var(--mono);
   font-size: 12px;
@@ -508,11 +508,11 @@ table.trade-table td {
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
-
+ 
 table.trade-table tr:last-child td { border-bottom: none; }
-
+ 
 table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
-
+ 
 .td-account {
   display: inline-block;
   font-size: 10px;
@@ -520,22 +520,22 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   border-radius: 2px;
   font-weight: 700;
 }
-
+ 
 .acc-lucid { background: var(--lucid-dim); color: var(--lucid); border: 1px solid rgba(0,212,170,0.2); }
 .acc-blusky { background: var(--blusky-dim); color: var(--blusky); border: 1px solid rgba(77,166,255,0.2); }
 .acc-apex { background: var(--apex-dim); color: var(--apex); border: 1px solid rgba(255,140,66,0.2); }
 .acc-alpha { background: var(--alpha-dim); color: var(--alpha); border: 1px solid rgba(255,68,136,0.2); }
-
+ 
 .pnl-win { color: var(--win); font-weight: 700; }
 .pnl-loss { color: var(--loss); font-weight: 700; }
 .pnl-neutral { color: var(--neutral); }
-
+ 
 .side-long { color: var(--win); font-size: 10px; padding: 2px 8px; background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.15); border-radius: 2px; }
 .side-short { color: #ff8060; font-size: 10px; padding: 2px 8px; background: rgba(255,64,96,0.08); border: 1px solid rgba(255,64,96,0.15); border-radius: 2px; }
-
+ 
 .exit-win { color: var(--win); font-size: 10px; }
 .exit-loss { color: var(--loss); font-size: 10px; }
-
+ 
 /* SEQUENCE SECTION */
 .sequence-wrap {
   background: var(--bg2);
@@ -543,7 +543,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   border-radius: 4px;
   padding: 20px;
 }
-
+ 
 .sequence-meta {
   display: flex;
   gap: 24px;
@@ -551,11 +551,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .seq-stat {
   text-align: center;
 }
-
+ 
 .seq-stat-label {
   font-size: 9px;
   font-family: var(--mono);
@@ -564,20 +564,20 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: var(--text-dim);
   margin-bottom: 4px;
 }
-
+ 
 .seq-stat-value {
   font-family: var(--mono);
   font-size: 18px;
   font-weight: 700;
 }
-
+ 
 .sequence-timeline {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   align-items: center;
 }
-
+ 
 .seq-node {
   position: relative;
   display: flex;
@@ -586,9 +586,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   gap: 4px;
   cursor: pointer;
 }
-
+ 
 .seq-node:hover .seq-tooltip { opacity: 1; pointer-events: auto; }
-
+ 
 .seq-dot {
   width: 32px;
   height: 32px;
@@ -602,19 +602,19 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   transition: transform 0.15s;
   border: 1px solid transparent;
 }
-
+ 
 .seq-node:hover .seq-dot { transform: scale(1.1); }
-
+ 
 .seq-dot.win { background: rgba(0,212,170,0.18); color: var(--win); border-color: rgba(0,212,170,0.35); }
 .seq-dot.loss { background: rgba(255,64,96,0.15); color: var(--loss); border-color: rgba(255,64,96,0.3); }
 .seq-dot.be { background: rgba(90,122,149,0.15); color: var(--text-muted); border-color: var(--border2); }
-
+ 
 .seq-dot-acc {
   width: 5px;
   height: 5px;
   border-radius: 50%;
 }
-
+ 
 .seq-connector {
   width: 8px;
   height: 1px;
@@ -622,7 +622,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   margin-top: -18px;
   flex-shrink: 0;
 }
-
+ 
 .seq-tooltip {
   position: absolute;
   bottom: calc(100% + 8px);
@@ -642,7 +642,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: var(--text);
   line-height: 1.6;
 }
-
+ 
 .streak-badge {
   display: inline-flex;
   align-items: center;
@@ -653,24 +653,24 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   border-radius: 2px;
   margin-left: 16px;
 }
-
+ 
 .streak-win { background: rgba(0,212,170,0.1); color: var(--win); border: 1px solid rgba(0,212,170,0.25); }
 .streak-loss { background: rgba(255,64,96,0.1); color: var(--loss); border: 1px solid rgba(255,64,96,0.25); }
 .streak-none { background: rgba(90,122,149,0.1); color: var(--text-muted); border: 1px solid var(--border); }
-
+ 
 /* DAY HEATMAP */
 .heatmap-grid {
   display: grid;
   gap: 6px;
 }
-
+ 
 .heatmap-row {
   display: grid;
   grid-template-columns: 70px repeat(auto-fill, 36px);
   gap: 4px;
   align-items: center;
 }
-
+ 
 .heatmap-acc-label {
   font-family: var(--mono);
   font-size: 9px;
@@ -680,7 +680,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   text-align: right;
   padding-right: 6px;
 }
-
+ 
 .heatmap-cell {
   width: 36px;
   height: 28px;
@@ -694,40 +694,40 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   border: 1px solid transparent;
   cursor: default;
 }
-
+ 
 .heatmap-cell.win { background: rgba(0,212,170,0.18); color: var(--win); border-color: rgba(0,212,170,0.25); }
 .heatmap-cell.loss { background: rgba(255,64,96,0.12); color: var(--loss); border-color: rgba(255,64,96,0.2); }
 .heatmap-cell.be { background: rgba(90,122,149,0.1); color: var(--text-muted); border-color: var(--border); }
 .heatmap-cell.empty { background: var(--bg3); color: var(--text-dim); border-color: var(--border); font-size:8px; }
-
+ 
 .heatmap-date-row {
   display: grid;
   grid-template-columns: 70px repeat(auto-fill, 36px);
   gap: 4px;
   margin-bottom: 8px;
 }
-
+ 
 .heatmap-date-label {
   font-family: var(--mono);
   font-size: 9px;
   color: var(--text-dim);
   text-align: center;
 }
-
+ 
 /* RISK MONITOR */
 .risk-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-
+ 
 .risk-card {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 14px 16px;
 }
-
+ 
 .risk-card-label {
   font-size: 9px;
   font-family: var(--mono);
@@ -736,7 +736,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: var(--text-dim);
   margin-bottom: 8px;
 }
-
+ 
 .risk-row {
   display: flex;
   justify-content: space-between;
@@ -744,30 +744,30 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   padding: 5px 0;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .risk-row:last-child { border-bottom: none; }
-
+ 
 .risk-acc {
   font-family: var(--mono);
   font-size: 10px;
   color: var(--text-muted);
 }
-
+ 
 .risk-val {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
 }
-
+ 
 /* STATS ROW */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
-
+ 
 @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(3, 1fr); } }
-
+ 
 .stat-box {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -775,7 +775,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   padding: 16px;
   text-align: center;
 }
-
+ 
 .stat-box .s-label {
   font-size: 9px;
   font-family: var(--mono);
@@ -784,30 +784,30 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: var(--text-dim);
   margin-bottom: 6px;
 }
-
+ 
 .stat-box .s-value {
   font-family: var(--mono);
   font-size: 22px;
   font-weight: 700;
   line-height: 1;
 }
-
+ 
 .stat-box .s-sub {
   font-size: 10px;
   font-family: var(--mono);
   color: var(--text-dim);
   margin-top: 4px;
 }
-
+ 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
-
+ 
 /* HIDDEN for filtering */
 .trade-row { transition: opacity 0.2s; }
 .trade-row.hidden { display: none; }
-
+ 
 /* CIRCUIT BREAKER */
 .circuit-breaker {
   background: var(--bg2);
@@ -819,7 +819,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   justify-content: space-between;
   margin-bottom: 14px;
 }
-
+ 
 .cb-label {
   font-family: var(--mono);
   font-size: 11px;
@@ -827,16 +827,16 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   text-transform: uppercase;
   color: var(--text-dim);
 }
-
+ 
 .cb-status {
   display: flex;
   gap: 24px;
 }
-
+ 
 .cb-item {
   text-align: center;
 }
-
+ 
 .cb-item-label {
   font-size: 9px;
   font-family: var(--mono);
@@ -845,23 +845,23 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
   color: var(--text-dim);
   margin-bottom: 3px;
 }
-
+ 
 .cb-item-value {
   font-family: var(--mono);
   font-size: 16px;
   font-weight: 700;
 }
-
+ 
 .cb-ok { color: var(--win); }
 .cb-warn { color: #ffb830; }
 .cb-stop { color: var(--loss); }
-
+ 
 .cb-rule {
   font-size: 11px;
   color: var(--text-dim);
   font-family: var(--mono);
 }
-
+ 
 .cb-rule strong {
   color: #ffb830;
   font-weight: 700;
@@ -869,7 +869,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
 </style>
 </head>
 <body>
-
+ 
 <header class="header">
   <div class="header-left">
     <div class="logo">Miyagi <span>///</span> Command Center</div>
@@ -886,9 +886,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
     </div>
   </div>
 </header>
-
+ 
 <main class="main">
-
+ 
   <!-- CIRCUIT BREAKER STATUS -->
   <div class="circuit-breaker">
     <div>
@@ -914,11 +914,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
     </div>
   </div>
-
+ 
   <!-- ACCOUNT CARDS -->
   <div class="section-title">Cuentas</div>
   <div class="accounts-grid">
-
+ 
     <!-- LUCID -->
     <div class="account-card lucid">
       <div class="card-header">
@@ -928,13 +928,13 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <span class="card-type type-funded">Funded ★</span>
       </div>
-
+ 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
         <div class="balance-value">$50,590.00</div>
         <div class="balance-delta delta-pos">+$590.00 desde inicio</div>
       </div>
-
+ 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
@@ -945,7 +945,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,000</div>
       </div>
-
+ 
       <!-- WITHDRAWAL TARGET -->
       <div class="withdrawal-section">
         <div class="withdrawal-label">🎯 Target Retiro</div>
@@ -958,7 +958,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div class="withdrawal-remaining">Faltan $2,410 para retiro seguro</div>
       </div>
-
+ 
       <div class="card-stats">
         <div class="stat-item">
           <div class="stat-label">Contratos</div>
@@ -974,7 +974,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
       </div>
     </div>
-
+ 
     <!-- BLUSKY -->
     <div class="account-card blusky">
       <div class="card-header">
@@ -984,13 +984,13 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <span class="card-type type-eval">Eval</span>
       </div>
-
+ 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
         <div class="balance-value">$50,946.00</div>
         <div class="balance-delta delta-pos">+$946.00 desde inicio</div>
       </div>
-
+ 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
@@ -1001,11 +1001,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,000</div>
       </div>
-
+ 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(77,166,255,0.05); border: 1px solid rgba(77,166,255,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--blusky);">
         💰 Daily Payout · Sin mínimo días
       </div>
-
+ 
       <div class="card-stats">
         <div class="stat-item">
           <div class="stat-label">Contratos</div>
@@ -1021,7 +1021,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
       </div>
     </div>
-
+ 
     <!-- APEX -->
     <div class="account-card apex">
       <div class="card-header">
@@ -1031,13 +1031,13 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <span class="card-type type-eval">Eval</span>
       </div>
-
+ 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
         <div class="balance-value">$50,901.68</div>
         <div class="balance-delta delta-pos">+$901.68 desde inicio</div>
       </div>
-
+ 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
@@ -1048,11 +1048,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,500</div>
       </div>
-
+ 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--apex);">
         📈 Scaling contratos al fondear
       </div>
-
+ 
       <div class="card-stats">
         <div class="stat-item">
           <div class="stat-label">Contratos</div>
@@ -1068,7 +1068,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
       </div>
     </div>
-
+ 
     <!-- ALPHA -->
     <div class="account-card alpha">
       <div class="card-header">
@@ -1078,13 +1078,13 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <span class="card-type type-eval">Eval</span>
       </div>
-
+ 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
         <div class="balance-value">$49,092.64</div>
         <div class="balance-delta delta-neg">−$907.36 desde inicio</div>
       </div>
-
+ 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
@@ -1095,11 +1095,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,500</div>
       </div>
-
+ 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,68,136,0.05); border: 1px solid rgba(255,68,136,0.2); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--alpha);">
         ⚠ Replicada con Apex · Manejar con cuidado
       </div>
-
+ 
       <div class="card-stats">
         <div class="stat-item">
           <div class="stat-label">Contratos</div>
@@ -1115,9 +1115,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
       </div>
     </div>
-
+ 
   </div>
-
+ 
   <!-- STATS GLOBALES -->
   <div class="section-title">Métricas Globales</div>
   <div class="stats-row">
@@ -1147,11 +1147,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       <div class="s-sub">24 mar 2026</div>
     </div>
   </div>
-
+ 
   <!-- ANALYTICS -->
   <div class="section-title">Equity &amp; Análisis</div>
   <div class="analytics-grid">
-
+ 
     <!-- EQUITY CHART -->
     <div class="chart-card">
       <div class="chart-title">Curva de Equity — Todas las Cuentas</div>
@@ -1181,11 +1181,11 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
                 stroke="#00d4aa" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
           <path d="M 0,75 L 80,78 L 160,68 L 200,65 L 240,72 L 280,60 L 320,65 L 380,68 L 420,62 L 480,65 L 600,58 L 600,150 L 0,150 Z"
                 fill="url(#lucid-grad)" opacity="0.5"/>
-
+ 
           <!-- BluSky equity line -->
           <path d="M 80,75 L 120,68 L 160,58 L 240,62 L 280,55 L 340,48 L 380,52 L 440,48 L 600,42"
                 stroke="#4da6ff" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-
+ 
           <!-- Apex equity line -->
           <path d="M 60,75 L 100,55 L 140,68 L 200,55 L 240,52 L 280,50 L 380,46 L 440,50 L 600,44"
                 stroke="#ff8c42" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
@@ -1193,7 +1193,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
           <!-- Alpha line -->
           <path d="M 280,75 L 380,80 L 440,77 L 600,74"
                 stroke="#ff4488" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-dasharray="3,2"/>
-
+ 
           <!-- Labels -->
           <text x="8" y="55" fill="#00d4aa" font-family="Space Mono" font-size="8">LUCID</text>
           <text x="8" y="40" fill="#4da6ff" font-family="Space Mono" font-size="8">BLUSKY</text>
@@ -1207,7 +1207,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span style="font-family:var(--mono); font-size:9px; color:var(--alpha);">- ALPHA</span>
       </div>
     </div>
-
+ 
     <!-- REGLAS -->
     <div class="rules-card">
       <div class="chart-title">Reglas Operativas</div>
@@ -1240,7 +1240,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="rule-text"><strong>RETIRO SEGURO:</strong> $53,000 (no $50k)</div>
       </div>
     </div>
-
+ 
     <!-- SCALING PLAN -->
     <div class="rules-card">
       <div class="chart-title">Scaling Plan — Lucid 09</div>
@@ -1252,7 +1252,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
           <span style="font-size:11px; color:var(--text-muted);">contratos activos</span>
         </div>
       </div>
-
+ 
       <div style="display:flex; flex-direction:column; gap:6px;">
         <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px; border-radius:3px; background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25);">
           <span style="font-family:var(--mono); font-size:11px; color:var(--lucid);">→ 6c</span>
@@ -1271,9 +1271,9 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         Techo: $600 riesgo · SL fijo 30 pts
       </div>
     </div>
-
+ 
   </div>
-
+ 
   <!-- TRADE LOG -->
   <div class="section-title">Bitácora de Trades</div>
   <div class="table-card">
@@ -1517,7 +1517,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
     </table>
     </div>
   </div>
-
+ 
   <!-- TRADE SEQUENCE -->
   <div class="section-title">Secuencia de Trades — Todas las Cuentas</div>
   <div class="sequence-wrap">
@@ -1546,12 +1546,12 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 2 wins</span>
       </div>
     </div>
-
+ 
     <!-- Sequence timeline — ordered chronologically across all accounts -->
     <div class="sequence-timeline" id="sequence-timeline">
       <!-- Generated by JS below -->
     </div>
-
+ 
     <div style="display:flex; gap:16px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); align-items:center;">
       <span style="font-family:var(--mono); font-size:9px; color:var(--text-dim); letter-spacing:0.1em; text-transform:uppercase;">Leyenda:</span>
       <span style="display:flex;align-items:center;gap:5px;"><span style="width:14px;height:14px;border-radius:2px;background:rgba(0,212,170,0.18);border:1px solid rgba(0,212,170,0.35);display:inline-block;"></span><span style="font-family:var(--mono);font-size:9px;color:var(--text-muted);">WIN</span></span>
@@ -1560,7 +1560,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       <span style="margin-left:8px; font-family:var(--mono); font-size:9px; color:var(--text-dim);">Punto = cuenta · Hover para detalles</span>
     </div>
   </div>
-
+ 
   <!-- HEATMAP POR DÍA -->
   <div class="section-title">Rendimiento por Día — Vista Calendario</div>
   <div class="chart-card">
@@ -1573,7 +1573,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span style="font-family:var(--mono);font-size:9px;color:var(--alpha);">■ ALPHA</span>
       </div>
     </div>
-
+ 
     <div class="heatmap-grid">
       <!-- Date labels -->
       <div class="heatmap-date-row">
@@ -1589,7 +1589,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-date-label">24/3</div>
         <div class="heatmap-date-label">25/3</div>
       </div>
-
+ 
       <!-- LUCID row -->
       <div class="heatmap-row">
         <div class="heatmap-acc-label" style="color:var(--lucid)">LUCID</div>
@@ -1604,7 +1604,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell win" title="+$240">+$240</div>
         <div class="heatmap-cell win" title="+$329">+$329</div>
       </div>
-
+ 
       <!-- BLUSKY row -->
       <div class="heatmap-row">
         <div class="heatmap-acc-label" style="color:var(--blusky)">BLUSKY</div>
@@ -1618,7 +1618,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell win" title="+$468">+$468</div>
       </div>
-
+ 
       <!-- APEX row -->
       <div class="heatmap-row">
         <div class="heatmap-acc-label" style="color:var(--apex)">APEX</div>
@@ -1632,7 +1632,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell loss" title="-$16">-$16</div>
         <div class="heatmap-cell win" title="+$480">+$480</div>
       </div>
-
+ 
       <!-- ALPHA row -->
       <div class="heatmap-row">
         <div class="heatmap-acc-label" style="color:var(--alpha)">ALPHA</div>
@@ -1646,7 +1646,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell win" title="+$516">+$516</div>
       </div>
-
+ 
       <!-- TOTAL row -->
       <div class="heatmap-row" style="margin-top:6px; padding-top:6px; border-top:1px solid var(--border);">
         <div class="heatmap-acc-label" style="color:var(--text-muted)">TOTAL</div>
@@ -1662,7 +1662,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
     </div>
   </div>
-
+ 
   <!-- RISK MONITOR -->
   <div class="section-title">Monitor de Riesgo</div>
   <div class="risk-grid">
@@ -1686,7 +1686,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span class="risk-val" style="color:#ffb830)">$2,087</span>
       </div>
     </div>
-
+ 
     <!-- RIESGO POR TRADE -->
     <div class="risk-card">
       <div class="risk-card-label">Riesgo máx por trade</div>
@@ -1711,7 +1711,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span class="risk-val" style="color:#ffb830">$1,680</span>
       </div>
     </div>
-
+ 
     <!-- TRADES PARA PRÓXIMO RETIRO -->
     <div class="risk-card">
       <div class="risk-card-label">Lucid — Camino al retiro</div>
@@ -1736,7 +1736,7 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
         <span class="risk-val">≈ 6 días</span>
       </div>
     </div>
-
+ 
     <!-- CONSISTENCIA -->
     <div class="risk-card">
       <div class="risk-card-label">Consistencia del período</div>
@@ -1762,10 +1762,10 @@ table.trade-table tr:hover td { background: rgba(255,255,255,0.02); }
       </div>
     </div>
   </div>
-
+ 
   <div style="height:40px;"></div>
 </main>
-
+ 
 <script>
 // ─── TRADE DATA ─────────────────────────────────────────────────────────────
 const TRADES = [
@@ -1804,32 +1804,32 @@ const TRADES = [
   { date:'3/25/26', acc:'blusky', side:'S', entry:24452.50, exit:24482.63, c:8,  pnl:-492.40, via:'Stop' },
   { date:'3/25/26', acc:'alpha',  side:'S', entry:24449.25, exit:24479.25, c:8,  pnl:-494.56, via:'Stop' },
 ];
-
+ 
 const ACC_COLOR = { lucid:'#00d4aa', blusky:'#4da6ff', apex:'#ff8c42', alpha:'#ff4488' };
 const ACC_LABEL = { lucid:'LUCID', blusky:'BLUSKY', apex:'APEX', alpha:'ALPHA' };
-
+ 
 // Sort by date order (approximate by index since dates are pre-sorted)
 const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26'];
 const sorted = [...TRADES].sort((a,b) => DATE_ORDER.indexOf(a.date) - DATE_ORDER.indexOf(b.date));
-
+ 
 // Build sequence timeline
 function buildSequence() {
   const timeline = document.getElementById('sequence-timeline');
   timeline.innerHTML = '';
-
+ 
   let maxWin = 0, maxLoss = 0, curStreak = 0, curType = null;
   let runWin = 0, runLoss = 0;
-
+ 
   sorted.forEach((t, i) => {
     const result = t.pnl > 0 ? 'win' : t.pnl < 0 ? 'loss' : 'be';
     const symbol = result === 'win' ? 'W' : result === 'loss' ? 'L' : 'BE';
     const pnlStr = (t.pnl >= 0 ? '+' : '') + '$' + Math.abs(t.pnl).toFixed(0);
-
+ 
     // streak calc
     if (result === 'win') { runWin++; runLoss = 0; maxWin = Math.max(maxWin, runWin); }
     else if (result === 'loss') { runLoss++; runWin = 0; maxLoss = Math.max(maxLoss, runLoss); }
     else { runWin = 0; runLoss = 0; }
-
+ 
     const node = document.createElement('div');
     node.className = 'seq-node';
     node.innerHTML = `
@@ -1844,16 +1844,16 @@ function buildSequence() {
         <div style="color:${t.pnl >= 0 ? '#00d4aa' : '#ff4060'};font-weight:700;margin-top:2px;">${pnlStr} · ${t.via}</div>
       </div>
     `;
-
+ 
     timeline.appendChild(node);
-
+ 
     if (i < sorted.length - 1) {
       const conn = document.createElement('div');
       conn.className = 'seq-connector';
       timeline.appendChild(conn);
     }
   });
-
+ 
   // Current streak
   const last = sorted[sorted.length - 1];
   let streak = 0, streakType = '';
@@ -1863,7 +1863,7 @@ function buildSequence() {
     if (r === lastR) { streak++; streakType = lastR; }
     else break;
   }
-
+ 
   const streakBadge = document.getElementById('streak-badge');
   const streakVal = document.getElementById('current-streak-val');
   if (streakType === 'win') {
@@ -1882,9 +1882,9 @@ function buildSequence() {
     streakVal.textContent = 'BE';
   }
 }
-
+ 
 buildSequence();
-
+ 
 // ─── CLOCK ───────────────────────────────────────────────────────────────────
 function updateClock() {
   const now = new Date();
@@ -1894,7 +1894,7 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
-
+ 
 // ─── FILTER TRADES ────────────────────────────────────────────────────────────
 function filterTrades(filter, btn) {
   document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
@@ -1910,7 +1910,7 @@ function filterTrades(filter, btn) {
     row.classList.toggle('hidden', !show);
   });
 }
-
+ 
 // ─── ANIMATE BARS ─────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   document.querySelectorAll('.dd-bar-fill, .withdrawal-bar-fill').forEach(bar => {
@@ -1922,3 +1922,4 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+ 
