@@ -1022,6 +1022,209 @@ table.trade-table tr:hover td {
 /* Scrollbar glow */
 ::-webkit-scrollbar-thumb:hover { background: rgba(0,212,170,0.3); }
 
+/* ═══════════════════════════════════════════════
+   SUB-DASHBOARD
+═══════════════════════════════════════════════ */
+
+#sub-dash-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7,10,15,0.85);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+  padding: 20px;
+}
+#sub-dash-overlay.visible { opacity: 1; }
+
+.sub-dash-panel {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  max-width: 1100px;
+  margin: 0 auto;
+  transform: translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  overflow: hidden;
+}
+.sub-dash-panel.visible { transform: translateY(0); }
+
+.sub-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--bg3);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sub-back-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text-muted);
+  padding: 7px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.sub-back-btn:hover { background: var(--border2); color: var(--text); }
+
+.sub-dash-body { padding: 20px 24px; }
+
+.sub-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+@media (max-width: 900px) { .sub-metrics-row { grid-template-columns: repeat(4, 1fr); } }
+
+.sub-kpi {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.sub-kpi-label {
+  font-size: 9px;
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 5px;
+}
+.sub-kpi-val {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.sub-kpi-sub {
+  font-size: 9px;
+  font-family: var(--mono);
+  color: var(--text-dim);
+}
+
+.sub-dd-row { margin-bottom: 16px; }
+
+.sub-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+@media (max-width: 700px) { .sub-two-col { grid-template-columns: 1fr; } }
+
+.sub-chart-card, .sub-special-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+}
+.sub-card-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.sub-special-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+}
+.sub-special-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.sub-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--bg2);
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+.sub-metric-label {
+  font-size: 9px;
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.sub-metric-val {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.sub-table-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 0;
+}
+.sub-trade-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.sub-trade-table th {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+.sub-trade-table td {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.sub-trade-table tr:last-child td { border-bottom: none; }
+.sub-trade-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.account-card { cursor: pointer; }
+.account-card::after {
+  content: '→ Ver detalle';
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.account-card:hover::after { opacity: 1; }
+
 </style>
 </head>
 <body>
@@ -1076,7 +1279,7 @@ table.trade-table tr:hover td {
   <div class="accounts-grid">
 
     <!-- LUCID -->
-    <div class="account-card lucid">
+    <div class="account-card lucid" onclick="openSubDash('lucid')">
       <div class="card-header">
         <div>
           <div class="card-name lucid">LUCID 09</div>
@@ -1094,12 +1297,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$3,261 / $3,000 mín</span>
+          <span class="dd-value dd-ok">$2,000 / $2,000 max</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 87%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,000</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,590 | EOD trailing</div>
       </div>
 
       <!-- WITHDRAWAL TARGET -->
@@ -1132,7 +1335,7 @@ table.trade-table tr:hover td {
     </div>
 
     <!-- BLUSKY -->
-    <div class="account-card blusky">
+    <div class="account-card blusky" onclick="openSubDash('blusky')">
       <div class="card-header">
         <div>
           <div class="card-name blusky">BLUSKY</div>
@@ -1150,12 +1353,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$4,438 de $4,500 max</span>
+          <span class="dd-value dd-warn">$1,496 / $2,000 max</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 98%"></div>
+          <div class="dd-bar-fill fill-warn" style="width: 74.8%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,000</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,450 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(77,166,255,0.05); border: 1px solid rgba(77,166,255,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--blusky);">
@@ -1179,7 +1382,7 @@ table.trade-table tr:hover td {
     </div>
 
     <!-- APEX -->
-    <div class="account-card apex">
+    <div class="account-card apex" onclick="openSubDash('apex')">
       <div class="card-header">
         <div>
           <div class="card-name apex">APEX</div>
@@ -1197,12 +1400,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$3,196 de $2,500 min</span>
+          <span class="dd-value dd-ok">$2,000 / $2,000 max</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 78%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,500</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,902 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--apex);">
@@ -1226,7 +1429,7 @@ table.trade-table tr:hover td {
     </div>
 
     <!-- ALPHA -->
-    <div class="account-card alpha">
+    <div class="account-card alpha" onclick="openSubDash('alpha')">
       <div class="card-header">
         <div>
           <div class="card-name alpha">ALPHA</div>
@@ -1244,12 +1447,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-warn">$2,587 de $2,500 min</span>
+          <span class="dd-value dd-warn">$1,093 / $2,000 max</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-warn" style="width: 52%"></div>
+          <div class="dd-bar-fill fill-warn" style="width: 54.6%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Límite máx pérdida: $47,000 | Piso: $47,500</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,000 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,68,136,0.05); border: 1px solid rgba(255,68,136,0.2); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--alpha);">
@@ -1831,19 +2034,19 @@ table.trade-table tr:hover td {
       <div class="risk-card-label">DD Disponible vs Límite</div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--lucid)">LUCID</span>
-        <span class="risk-val" style="color:var(--win)">$3,261</span>
+        <span class="risk-val" style="color:var(--win)">$2,000</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--blusky)">BLUSKY</span>
-        <span class="risk-val" style="color:var(--win)">$4,438</span>
+        <span class="risk-val" style="color:#ffb830">$1,496</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--apex)">APEX</span>
-        <span class="risk-val" style="color:var(--win)">$2,696</span>
+        <span class="risk-val" style="color:var(--win)">$2,000</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--alpha)">ALPHA</span>
-        <span class="risk-val" style="color:#ffb830)">$2,087</span>
+        <span class="risk-val" style="color:#ffb830">$1,093</span>
       </div>
     </div>
 
@@ -2172,6 +2375,347 @@ window.addEventListener('load', () => {
     }, (i * 30) + 600);
   });
 });
+
+// ─── SUB-DASHBOARD ────────────────────────────────────────────────────────────
+const ACCOUNT_DATA = {
+  lucid: {
+    name: 'LUCID 09', id: 'LFF0506474396001', color: '#00d4aa', colorDim: 'rgba(0,212,170,0.1)',
+    type: 'Funded ★', firm: 'Lucid Trading',
+    balance: 50590.00, starting: 50000, contracts: 4,
+    mll: 50100, trail: 52100, targetRetiro: 53000,
+    dailyLoss: 1000, maxRisk: 240,
+    consistency: null,
+    fundingTarget: null,
+    special: 'withdrawal',
+    profitCiclo: 590,
+    diasCalificados: 5,
+    notes: 'Cuenta funded principal. Primer retiro seguro en ~$52,100 de balance. MLL se bloquea en $50,100.',
+  },
+  blusky: {
+    name: 'BLUSKY', id: 'BSKELAUNCHGASTON63952', color: '#4da6ff', colorDim: 'rgba(77,166,255,0.1)',
+    type: 'Evaluation', firm: 'BluSky Trading',
+    balance: 50946.00, starting: 50000, contracts: 8,
+    mll: 47000, trail: null, targetRetiro: null,
+    dailyLoss: 1000, maxRisk: 480,
+    consistency: 26.79,
+    fundingTarget: 3000,
+    special: 'consistency',
+    profitCiclo: 946,
+    diasCalificados: null,
+    notes: 'Daily payout sin mínimo de días. Regla de consistencia: ningún día > 50% del profit total. Multiplicador x2 en Tradecopia.',
+  },
+  apex: {
+    name: 'APEX', id: 'APEX3875470000012', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
+    type: 'Evaluation', firm: 'Apex Trader',
+    balance: 50901.68, starting: 50000, contracts: 8,
+    mll: 47500, trail: null, targetRetiro: null,
+    dailyLoss: 1000, maxRisk: 480,
+    consistency: null,
+    fundingTarget: 3000,
+    special: 'funding',
+    profitCiclo: 901.68,
+    diasCalificados: null,
+    notes: 'Líder del bloque Apex/Alpha. Scaling de contratos al fondear. Sin regla de consistencia.',
+  },
+  alpha: {
+    name: 'ALPHA', id: 'AFZEROEV202603201005', color: '#ff4488', colorDim: 'rgba(255,68,136,0.1)',
+    type: 'Evaluation', firm: 'Alpha',
+    balance: 49092.64, starting: 50000, contracts: 8,
+    mll: 47500, trail: null, targetRetiro: null,
+    dailyLoss: 1000, maxRisk: 480,
+    consistency: null,
+    fundingTarget: 3000,
+    special: 'funding',
+    profitCiclo: -907.36,
+    diasCalificados: null,
+    notes: 'Replicada de Apex x1. Balance negativo — 4 pérdidas más antes de breached. Solo 10/10.',
+  }
+};
+
+const TRADES_BY_ACC = {
+  lucid:  TRADES.filter(t => t.acc === 'lucid'),
+  blusky: TRADES.filter(t => t.acc === 'blusky'),
+  apex:   TRADES.filter(t => t.acc === 'apex'),
+  alpha:  TRADES.filter(t => t.acc === 'alpha'),
+};
+
+function calcMetrics(trades) {
+  if (!trades.length) return {};
+  const wins = trades.filter(t => t.pnl > 0);
+  const losses = trades.filter(t => t.pnl < 0);
+  const wr = wins.length / trades.length;
+  const avgWin = wins.length ? wins.reduce((s,t) => s+t.pnl, 0)/wins.length : 0;
+  const avgLoss = losses.length ? Math.abs(losses.reduce((s,t) => s+t.pnl, 0)/losses.length) : 0;
+  const rr = avgLoss ? (avgWin/avgLoss) : 0;
+  const pf = losses.length && Math.abs(losses.reduce((s,t)=>s+t.pnl,0)) > 0
+    ? wins.reduce((s,t)=>s+t.pnl,0) / Math.abs(losses.reduce((s,t)=>s+t.pnl,0))
+    : 0;
+  const totalPnl = trades.reduce((s,t) => s+t.pnl, 0);
+  // Best/worst day
+  const byDate = {};
+  trades.forEach(t => { byDate[t.date] = (byDate[t.date]||0) + t.pnl; });
+  const dayVals = Object.values(byDate);
+  const bestDay = dayVals.length ? Math.max(...dayVals) : 0;
+  const worstDay = dayVals.length ? Math.min(...dayVals) : 0;
+  // Streak
+  let curStreak = 0, streakType = '';
+  const lastResult = trades[trades.length-1]?.pnl > 0 ? 'win' : 'loss';
+  for (let i = trades.length-1; i >= 0; i--) {
+    const r = trades[i].pnl > 0 ? 'win' : 'loss';
+    if (r === lastResult) curStreak++;
+    else break;
+  }
+  streakType = lastResult;
+  return { wr, avgWin, avgLoss, rr, pf, totalPnl, bestDay, worstDay, curStreak, streakType,
+    winsN: wins.length, lossesN: losses.length, totalN: trades.length };
+}
+
+function openSubDash(acc) {
+  const d = ACCOUNT_DATA[acc];
+  const trades = TRADES_BY_ACC[acc];
+  const m = calcMetrics(trades);
+  const pnl = d.balance - d.starting;
+  const pnlSign = pnl >= 0 ? '+' : '';
+  const ddAvail = d.balance - d.mll;
+  const ddPct = Math.min((ddAvail / (d.starting * 0.06)) * 100, 100);
+  const ddClass = ddPct > 60 ? 'dd-ok' : ddPct > 30 ? 'dd-warn' : 'dd-danger';
+
+  // Special section per account
+  let specialHTML = '';
+  if (d.special === 'withdrawal') {
+    const toTarget = d.targetRetiro - d.balance;
+    const progress = Math.max(0, Math.min(((d.balance - d.starting) / (d.targetRetiro - d.starting)) * 100, 100));
+    const mllLocked = d.balance >= d.trail;
+    specialHTML = `
+      <div class="sub-special-card">
+        <div class="sub-special-title">🎯 Camino al Retiro</div>
+        <div class="sub-special-grid">
+          <div class="sub-metric"><span class="sub-metric-label">Balance actual</span><span class="sub-metric-val" style="color:${d.color}">$${d.balance.toLocaleString('en-US',{minimumFractionDigits:2})}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Target retiro seguro</span><span class="sub-metric-val">$53,000</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">MLL bloqueado en</span><span class="sub-metric-val" style="color:#ff4060">$${d.mll.toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Trail se bloquea en</span><span class="sub-metric-val" style="color:#ffb830">$${d.trail.toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Días calificados</span><span class="sub-metric-val" style="color:${d.diasCalificados>=5?'#00d4aa':'#ffb830'}">${d.diasCalificados}/5</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Profit en ciclo</span><span class="sub-metric-val" style="color:${d.profitCiclo>0?'#00d4aa':'#ff4060'}">${d.profitCiclo>0?'+':''}$${d.profitCiclo.toFixed(2)}</span></div>
+        </div>
+        <div style="margin-top:14px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-bottom:5px;"><span>$50,000</span><span>META $53,000</span></div>
+          <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div style="height:100%;width:${progress.toFixed(1)}%;background:linear-gradient(90deg,${d.color},#00ffcc);border-radius:3px;transition:width 1s ease;box-shadow:0 0 8px rgba(0,212,170,0.4);"></div>
+          </div>
+          <div style="font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-top:5px;text-align:right;">Faltan $${toTarget.toFixed(0)} · ~${Math.ceil(toTarget/150)} semanas</div>
+        </div>
+        <div style="margin-top:10px;padding:8px 12px;background:${mllLocked?'rgba(0,212,170,0.08)':'rgba(255,184,48,0.08)'};border:1px solid ${mllLocked?'rgba(0,212,170,0.2)':'rgba(255,184,48,0.2)'};border-radius:3px;font-size:11px;font-family:var(--mono);color:${mllLocked?'#00d4aa':'#ffb830'};">
+          ${mllLocked ? '🔒 MLL bloqueado — podés retirar con seguridad' : '⚠ MLL aún en trail — esperá $52,100 antes de retirar'}
+        </div>
+      </div>`;
+  } else if (d.special === 'consistency') {
+    const limiteDiario = d.profitCiclo * 0.499;
+    const pctUsado = d.consistency || 0;
+    const pctClass = pctUsado > 45 ? '#ff4060' : pctUsado > 35 ? '#ffb830' : '#00d4aa';
+    specialHTML = `
+      <div class="sub-special-card">
+        <div class="sub-special-title">📊 Regla de Consistencia</div>
+        <div class="sub-special-grid">
+          <div class="sub-metric"><span class="sub-metric-label">Score actual</span><span class="sub-metric-val" style="color:${pctClass}">${pctUsado.toFixed(2)}%</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Límite</span><span class="sub-metric-val" style="color:#ff4060">50%</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Límite $ diario seguro</span><span class="sub-metric-val" style="color:#ffb830">$${limiteDiario.toFixed(0)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Profit total ciclo</span><span class="sub-metric-val" style="color:${d.color}">+$${d.profitCiclo.toFixed(2)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Payout target</span><span class="sub-metric-val">$${d.fundingTarget?.toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Falta para fondear</span><span class="sub-metric-val" style="color:#ffb830">$${(d.fundingTarget-d.profitCiclo).toFixed(0)}</span></div>
+        </div>
+        <div style="margin-top:14px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-bottom:5px;"><span>Consistency</span><span>Límite 50%</span></div>
+          <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;position:relative;">
+            <div style="height:100%;width:${pctUsado}%;background:${pctClass};border-radius:3px;transition:width 1s ease;"></div>
+            <div style="position:absolute;top:-3px;bottom:-3px;left:50%;width:2px;background:#ff4060;border-radius:1px;"></div>
+          </div>
+          <div style="font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-top:5px;">Multiplicador x2 · Daily payout sin mínimo de días</div>
+        </div>
+      </div>`;
+  } else {
+    const faltaFondar = (d.fundingTarget || 3000) - Math.max(0, d.profitCiclo);
+    const progFondar = Math.max(0, Math.min((d.profitCiclo / (d.fundingTarget||3000)) * 100, 100));
+    const ddLeft = d.balance - d.mll;
+    const tradesLeft = Math.floor(ddLeft / 480);
+    specialHTML = `
+      <div class="sub-special-card">
+        <div class="sub-special-title">${acc==='alpha'?'⚠':'📈'} Progreso hacia Fondeo</div>
+        <div class="sub-special-grid">
+          <div class="sub-metric"><span class="sub-metric-label">Profit target</span><span class="sub-metric-val">$${(d.fundingTarget||3000).toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Profit actual</span><span class="sub-metric-val" style="color:${d.profitCiclo>0?d.color:'#ff4060'}">${d.profitCiclo>0?'+':''}$${d.profitCiclo.toFixed(2)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Falta para fondear</span><span class="sub-metric-val" style="color:#ffb830">$${Math.max(0,faltaFondar).toFixed(0)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">DD disponible</span><span class="sub-metric-val" style="color:${ddLeft>1000?d.color:ddLeft>500?'#ffb830':'#ff4060'}">$${ddLeft.toFixed(0)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Pérdidas restantes</span><span class="sub-metric-val" style="color:${tradesLeft>4?d.color:tradesLeft>2?'#ffb830':'#ff4060'}">${tradesLeft} trades</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Replicada de</span><span class="sub-metric-val">${acc==='alpha'?'APEX x1':'BLUSKY x2'}</span></div>
+        </div>
+        <div style="margin-top:14px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-bottom:5px;"><span>$0</span><span>META $${(d.fundingTarget||3000).toLocaleString()}</span></div>
+          <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div style="height:100%;width:${Math.max(0,progFondar).toFixed(1)}%;background:${d.color};border-radius:3px;transition:width 1s ease;box-shadow:0 0 6px ${d.color}44;"></div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // Trade rows
+  const tradeRows = [...trades].reverse().map(t => {
+    const r = t.pnl > 0 ? 'win' : t.pnl < 0 ? 'loss' : 'be';
+    const cls = r === 'win' ? 'pnl-win' : r === 'loss' ? 'pnl-loss' : 'pnl-neutral';
+    const sideCls = t.side === 'B' ? 'side-long' : 'side-short';
+    const sideLabel = t.side === 'B' ? 'LONG' : 'SHORT';
+    return `<tr>
+      <td>${fmtDate(t.date)}</td>
+      <td><span class="${sideCls}">${sideLabel}</span></td>
+      <td>${t.c}c</td>
+      <td>${t.entry.toFixed(2)}</td>
+      <td>${t.exit.toFixed(2)}</td>
+      <td>${((t.exit - t.entry) * (t.side==='B'?1:-1)).toFixed(2)} pts</td>
+      <td class="${cls}">${t.pnl>=0?'+':''}$${t.pnl.toFixed(2)}</td>
+      <td style="font-size:10px;color:var(--text-dim)">${t.via}</td>
+    </tr>`;
+  }).join('');
+
+  // Mini equity curve points
+  let running = d.starting;
+  const eqPoints = trades.map(t => { running += t.pnl; return running; });
+  const minEq = Math.min(d.starting, ...eqPoints) - 100;
+  const maxEq = Math.max(d.starting, ...eqPoints) + 100;
+  const svgW = 400, svgH = 80;
+  const toX = (i) => (i / Math.max(eqPoints.length-1, 1)) * svgW;
+  const toY = (v) => svgH - ((v - minEq) / (maxEq - minEq)) * svgH;
+  const pts = eqPoints.map((v,i) => `${toX(i).toFixed(1)},${toY(v).toFixed(1)}`).join(' ');
+  const startY = toY(d.starting).toFixed(1);
+  const lastColor = eqPoints[eqPoints.length-1] >= d.starting ? d.color : '#ff4060';
+
+  const overlay = document.createElement('div');
+  overlay.id = 'sub-dash-overlay';
+  overlay.innerHTML = `
+    <div class="sub-dash-panel" id="sub-dash-panel">
+      <div class="sub-dash-header" style="border-bottom:2px solid ${d.color}22;">
+        <button class="sub-back-btn" onclick="closeSubDash()">← Volver</button>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:700;color:${d.color};">${d.name}</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:2px;">${d.id}</div>
+          </div>
+          <span style="font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:2px;background:${d.colorDim};color:${d.color};border:1px solid ${d.color}33;">${d.type}</span>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;color:${d.color};" class="sub-balance-anim">$${d.balance.toLocaleString('en-US',{minimumFractionDigits:2})}</div>
+          <div style="font-family:var(--mono);font-size:11px;color:${pnl>=0?'#00d4aa':'#ff4060'};">${pnlSign}$${pnl.toFixed(2)} desde inicio</div>
+        </div>
+      </div>
+
+      <div class="sub-dash-body">
+
+        <!-- METRICS ROW -->
+        <div class="sub-metrics-row">
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Win Rate</div>
+            <div class="sub-kpi-val" style="color:${m.wr>=0.6?'#00d4aa':m.wr>=0.5?'#ffb830':'#ff4060'}">${(m.wr*100).toFixed(1)}%</div>
+            <div class="sub-kpi-sub">${m.winsN}W / ${m.lossesN}L</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Profit Factor</div>
+            <div class="sub-kpi-val" style="color:${m.pf>=1.5?'#00d4aa':m.pf>=1?'#ffb830':'#ff4060'}">${m.pf.toFixed(2)}</div>
+            <div class="sub-kpi-sub">wins/losses</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">R:R Real</div>
+            <div class="sub-kpi-val" style="color:${m.rr>=1.5?'#00d4aa':m.rr>=1?'#ffb830':'#ff4060'}">${m.rr.toFixed(2)}</div>
+            <div class="sub-kpi-sub">avg win/loss</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Avg Win</div>
+            <div class="sub-kpi-val" style="color:#00d4aa">+$${m.avgWin.toFixed(0)}</div>
+            <div class="sub-kpi-sub">por trade</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Avg Loss</div>
+            <div class="sub-kpi-val" style="color:#ff4060">-$${m.avgLoss.toFixed(0)}</div>
+            <div class="sub-kpi-sub">por trade</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Mejor día</div>
+            <div class="sub-kpi-val" style="color:#00d4aa">+$${m.bestDay.toFixed(0)}</div>
+            <div class="sub-kpi-sub">en sesión</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Peor día</div>
+            <div class="sub-kpi-val" style="color:#ff4060">$${m.worstDay.toFixed(0)}</div>
+            <div class="sub-kpi-sub">en sesión</div>
+          </div>
+          <div class="sub-kpi">
+            <div class="sub-kpi-label">Racha actual</div>
+            <div class="sub-kpi-val" style="color:${m.streakType==='win'?'#00d4aa':'#ff4060'}">${m.streakType==='win'?'W':'L'}${m.curStreak}</div>
+            <div class="sub-kpi-sub">${m.streakType==='win'?'wins seguidos':'losses seguidos'}</div>
+          </div>
+        </div>
+
+        <!-- DD BAR -->
+        <div class="sub-dd-row">
+          <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-bottom:6px;">
+            <span>DD DISPONIBLE</span>
+            <span class="${ddClass}">$${ddAvail.toFixed(0)} disponible · MLL $${d.mll.toLocaleString()}</span>
+          </div>
+          <div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div class="${ddClass}" style="height:100%;width:${ddPct.toFixed(1)}%;border-radius:3px;transition:width 1.2s ease;background:${ddPct>60?d.color:ddPct>30?'#ffb830':'#ff4060'};"></div>
+          </div>
+        </div>
+
+        <div class="sub-two-col">
+          <!-- EQUITY CURVE -->
+          <div class="sub-chart-card">
+            <div class="sub-card-title">Equity Curve</div>
+            <svg viewBox="0 0 ${svgW} ${svgH}" width="100%" style="overflow:visible;">
+              <line x1="0" y1="${startY}" x2="${svgW}" y2="${startY}" stroke="#1e2a36" stroke-width="1" stroke-dasharray="4,3"/>
+              <polyline points="${pts}" fill="none" stroke="${lastColor}" stroke-width="2" stroke-linejoin="round"/>
+              ${eqPoints.map((v,i) => `<circle cx="${toX(i).toFixed(1)}" cy="${toY(v).toFixed(1)}" r="3" fill="${v>=d.starting?d.color:'#ff4060'}" stroke="var(--bg2)" stroke-width="1.5"/>`).join('')}
+            </svg>
+            <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:6px;">
+              <span>$${minEq.toFixed(0)}</span><span style="color:${d.color}">$${d.balance.toFixed(0)}</span>
+            </div>
+          </div>
+
+          <!-- SPECIAL SECTION -->
+          ${specialHTML}
+        </div>
+
+        <!-- TRADE TABLE -->
+        <div class="sub-table-card">
+          <div class="sub-card-title">Historial de Trades (${trades.length})</div>
+          <div style="overflow-x:auto;">
+            <table class="sub-trade-table">
+              <thead><tr><th>Fecha</th><th>Lado</th><th>Contr.</th><th>Entrada</th><th>Salida</th><th>Pts</th><th>P&L</th><th>Via</th></tr></thead>
+              <tbody>${tradeRows}</tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- NOTES -->
+        <div style="margin-top:14px;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;font-size:11px;font-family:var(--mono);color:var(--text-dim);line-height:1.6;">
+          ${d.notes}
+        </div>
+
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => {
+    overlay.classList.add('visible');
+    document.getElementById('sub-dash-panel').classList.add('visible');
+  });
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSubDash() {
+  const overlay = document.getElementById('sub-dash-overlay');
+  const panel = document.getElementById('sub-dash-panel');
+  if (!overlay) return;
+  overlay.classList.remove('visible');
+  panel.classList.remove('visible');
+  setTimeout(() => { overlay.remove(); document.body.style.overflow = ''; }, 350);
+}
 </script>
 </body>
 </html>
