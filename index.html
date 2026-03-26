@@ -1300,12 +1300,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-warn">$1,172 / $2,000 max</span>
+          <span class="dd-value dd-ok">$2,000 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-warn" style="width: 58.6%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,761 | EOD trailing</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,933 | EOD trailing</div>
       </div>
 
       <!-- WITHDRAWAL TARGET -->
@@ -1356,12 +1356,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-warn">$754 / $2,000 max</span>
+          <span class="dd-value dd-ok">$2,000 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-warn" style="width: 37.7%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $50,203 | EOD trailing</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,957 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(77,166,255,0.05); border: 1px solid rgba(77,166,255,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--blusky);">
@@ -1403,12 +1403,12 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,327 / $2,000 max</span>
+          <span class="dd-value dd-ok">$2,000 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 66.4%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $50,228 | EOD trailing</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,555 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--apex);">
@@ -1450,7 +1450,7 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-danger">$18 / $2,000 max</span>
+          <span class="dd-value dd-danger">$18 disponible · BREACHED</span>
         </div>
         <div class="dd-bar-track">
           <div class="dd-bar-fill fill-danger" style="width: 0.9%"></div>
@@ -2377,10 +2377,10 @@ window.addEventListener('load', () => {
   // Animate balance values
   setTimeout(() => {
     const balanceMap = [
-      { sel: '.account-card.lucid .balance-value',  val: 50590.00 },
-      { sel: '.account-card.blusky .balance-value', val: 50946.00 },
-      { sel: '.account-card.apex .balance-value',   val: 50901.68 },
-      { sel: '.account-card.alpha .balance-value',  val: 49092.64 },
+      { sel: '.account-card.lucid .balance-value',  val: 50933.00 },
+      { sel: '.account-card.blusky .balance-value', val: 50957.20 },
+      { sel: '.account-card.apex .balance-value',   val: 51555.36 },
+      { sel: '.account-card.alpha .balance-value',  val: 48035.84 },
     ];
     balanceMap.forEach(({ sel, val }) => {
       const el = document.querySelector(sel);
@@ -2432,20 +2432,20 @@ const ACCOUNT_DATA = {
   lucid: {
     name: 'LUCID 09', id: 'LFF0506474396001', color: '#00d4aa', colorDim: 'rgba(0,212,170,0.1)',
     type: 'Funded ★', firm: 'Lucid Trading',
-    balance: 50590.00, starting: 50000, contracts: 4,
+    balance: 50933.00, starting: 50000, contracts: 4,
     mll: 50100, trail: 52100, targetRetiro: 53000,
     dailyLoss: 1000, maxRisk: 240,
     consistency: null,
     fundingTarget: null,
     special: 'withdrawal',
-    profitCiclo: 590,
+    profitCiclo: 933,
     diasCalificados: 5,
     notes: 'Cuenta funded principal. Primer retiro seguro en ~$52,100 de balance. MLL se bloquea en $50,100.',
   },
   blusky: {
     name: 'BLUSKY', id: 'BSKELAUNCHGASTON63952', color: '#4da6ff', colorDim: 'rgba(77,166,255,0.1)',
     type: 'Evaluation', firm: 'BluSky Trading',
-    balance: 50946.00, starting: 50000, contracts: 8,
+    balance: 50957.20, starting: 50000, contracts: 8,
     mll: 47000, trail: null, targetRetiro: null,
     dailyLoss: 1000, maxRisk: 480,
     consistency: 26.79,
@@ -2458,7 +2458,7 @@ const ACCOUNT_DATA = {
   apex: {
     name: 'APEX', id: 'APEX3875470000012', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
     type: 'Evaluation', firm: 'Apex Trader',
-    balance: 50901.68, starting: 50000, contracts: 8,
+    balance: 51555.36, starting: 50000, contracts: 8,
     mll: 47500, trail: null, targetRetiro: null,
     dailyLoss: 1000, maxRisk: 480,
     consistency: null,
@@ -2471,7 +2471,7 @@ const ACCOUNT_DATA = {
   alpha: {
     name: 'ALPHA', id: 'AFZEROEV202603201005', color: '#ff4488', colorDim: 'rgba(255,68,136,0.1)',
     type: 'Evaluation', firm: 'Alpha',
-    balance: 49092.64, starting: 50000, contracts: 8,
+    balance: 48035.84, starting: 50000, contracts: 8,
     mll: 47500, trail: null, targetRetiro: null,
     dailyLoss: 1000, maxRisk: 480,
     consistency: null,
