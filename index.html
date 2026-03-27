@@ -1485,13 +1485,13 @@ table.trade-table tr:hover td {
   <div class="stats-row">
     <div class="stat-box">
       <div class="s-label">Total Trades</div>
-      <div class="s-value" style="color: var(--text);">39</div>
+      <div class="s-value" style="color: var(--text);">38</div>
       <div class="s-sub">desde 12 mar 2026</div>
     </div>
     <div class="stat-box">
       <div class="s-label">Win Rate Global</div>
-      <div class="s-value" style="color: var(--win);">61.5%</div>
-      <div class="s-sub">24W / 14L</div>
+      <div class="s-value" style="color: var(--win);">64.9%</div>
+      <div class="s-sub">24W / 13L</div>
     </div>
     <div class="stat-box">
       <div class="s-label">P&L Total CSVs</div>
@@ -1933,13 +1933,7 @@ table.trade-table tr:hover td {
           <td class="pnl-win">+60.00</td><td class="pnl-win">+$711.68</td>
           <td><span class="exit-win">Parcial+Runner</span></td>
         </tr>
-        <tr class="trade-row" data-account="alpha" data-result="loss">
-          <td>27/03/2026</td><td><span class="td-account acc-alpha">ALPHA</span></td>
-          <td><span class="side-short">SHORT</span></td><td>8c</td>
-          <td>23,600.00</td><td>23,606.82</td>
-          <td class="pnl-loss">-6.82</td><td class="pnl-loss">-$54.56</td>
-          <td><span class="exit-loss">⚠ Error replicador</span></td>
-        </tr>
+
       </tbody>
     </table>
     </div>
@@ -1951,26 +1945,26 @@ table.trade-table tr:hover td {
     <div class="sequence-meta">
       <div class="seq-stat">
         <div class="seq-stat-label">Total trades</div>
-        <div class="seq-stat-value" style="color:var(--text)">29</div>
+        <div class="seq-stat-value" style="color:var(--text)">38</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Racha actual</div>
-        <div class="seq-stat-value" id="current-streak-val" style="color:var(--win)">W2</div>
+        <div class="seq-stat-value" id="current-streak-val" style="color:var(--win)">W3</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Mejor racha W</div>
-        <div class="seq-stat-value" style="color:var(--win)">W4</div>
+        <div class="seq-stat-value" style="color:var(--win)">W5</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Peor racha L</div>
-        <div class="seq-stat-value" style="color:var(--loss)">L2</div>
+        <div class="seq-stat-value" style="color:var(--loss)">L5</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Ratio W:L</div>
-        <div class="seq-stat-value" style="color:var(--text)">17:11</div>
+        <div class="seq-stat-value" style="color:var(--text)">24:13</div>
       </div>
       <div style="display:flex; align-items:center; margin-left:auto;">
-        <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 2 wins</span>
+        <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 3 wins</span>
       </div>
     </div>
 
@@ -2083,7 +2077,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win" title="+$516">+$516</div>
         <div class="heatmap-cell loss" title="-$495">-$495</div>
         <div class="heatmap-cell loss" title="-$1,057">-$1,057</div>
-        <div class="heatmap-cell loss" title="-$55">-$55</div>
+        <div class="heatmap-cell empty">—</div>
       </div>
 
       <!-- TOTAL row -->
@@ -2100,7 +2094,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win">+$1,688</div>
         <div class="heatmap-cell win">+$48</div>
         <div class="heatmap-cell loss">-$49</div>
-        <div class="heatmap-cell win">+$1,735</div>
+        <div class="heatmap-cell win">+$1,790</div>
       </div>
     </div>
   </div>
@@ -2255,7 +2249,6 @@ const TRADES = [
   { date:'3/27/26', acc:'lucid',  side:'S', entry:23602.00, exit:23557.00, c:4,  pnl:356.00,   via:'Parcial+Runner' },
   { date:'3/27/26', acc:'blusky', side:'S', entry:23602.75, exit:23557.00, c:8,  pnl:721.60,   via:'Parcial+Runner' },
   { date:'3/27/26', acc:'apex',   side:'S', entry:23600.75, exit:23540.75, c:8,  pnl:711.68,   via:'Parcial+Runner' },
-  { date:'3/27/26', acc:'alpha',  side:'S', entry:23600.00, exit:23606.82, c:8,  pnl:-54.56,   via:'Error replicador' },
 ];
 
 const ACC_COLOR = { lucid:'#00d4aa', blusky:'#4da6ff', apex:'#ff8c42', alpha:'#ff4488' };
