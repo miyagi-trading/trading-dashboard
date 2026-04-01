@@ -2483,37 +2483,24 @@ const ACCOUNT_DATA = {
     notes: 'Daily payout sin mínimo de días. Regla de consistencia: ningún día > 50% del profit total. Multiplicador x2 en Tradecopia.',
   },
   apex: {
-    name: 'APEX', id: 'PAAPEX3875470000002', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
-    type: 'Evaluation', firm: 'Apex Trader',
-    balance: 50298.68, starting: 50000, contracts: 8,
-    mll: 47500, trail: null, targetRetiro: null,
-    dailyLoss: 1000, maxRisk: 480,
+    name: 'APEX PA', id: 'PAAPEX3875470000002', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
+    type: 'Performance Account', firm: 'Apex Trader',
+    balance: 50298.68, starting: 50000, contracts: 4,
+    mll: 48299, trail: null, targetRetiro: null,
+    dailyLoss: 1000, maxRisk: 240,
     consistency: null,
-    fundingTarget: 3000,
-    special: 'funding',
-    profitCiclo: 901.68,
+    fundingTarget: null,
+    special: 'funded_pa',
+    profitCiclo: 298.68,
     diasCalificados: null,
-    notes: 'Líder del bloque Apex/Alpha. Scaling de contratos al fondear. Sin regla de consistencia.',
+    notes: 'Performance Account fondeada. Sin límite de payouts. Arrancó el 01/04/2026. Operar con disciplina total — esta es la cuenta que genera flujo real.',
   },
-  alpha: {
-    name: 'ALPHA', id: 'AFZEROEV202603201005', color: '#ff4488', colorDim: 'rgba(255,68,136,0.1)',
-    type: 'Evaluation', firm: 'Alpha',
-    balance: 47981.28, starting: 50000, contracts: 8,
-    mll: 47500, trail: null, targetRetiro: null,
-    dailyLoss: 1000, maxRisk: 480,
-    consistency: null,
-    fundingTarget: 3000,
-    special: 'funding',
-    profitCiclo: -907.36,
-    diasCalificados: null,
-    notes: 'Replicada de Apex x1. Balance negativo — 4 pérdidas más antes de breached. Solo 10/10.',
-  }
 };
 
 const TRADES_BY_ACC = {
   lucid:  TRADES.filter(t => t.acc === 'lucid'),
   blusky: TRADES.filter(t => t.acc === 'blusky'),
-  apex:   TRADES.filter(t => t.acc === 'apex'),
+  apex:   TRADES.filter(t => t.acc === 'apex' && t.date.startsWith('4/')),
 };
 
 function calcMetrics(trades) {
@@ -2607,6 +2594,24 @@ function openSubDash(acc) {
             <div style="position:absolute;top:-3px;bottom:-3px;left:50%;width:2px;background:#ff4060;border-radius:1px;"></div>
           </div>
           <div style="font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-top:5px;">Multiplicador x2 · Daily payout sin mínimo de días</div>
+        </div>
+      </div>`;
+  } else if (d.special === 'funded_pa') {
+    const ddLeft = d.balance - d.mll;
+    const pnlPA = d.balance - d.starting;
+    specialHTML = `
+      <div class="sub-special-card">
+        <div class="sub-special-title">🏆 Performance Account — Fondeada</div>
+        <div class="sub-special-grid">
+          <div class="sub-metric"><span class="sub-metric-label">Tipo</span><span class="sub-metric-val" style="color:${d.color}">PA Funded</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Arrancó</span><span class="sub-metric-val">01/04/2026</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Balance</span><span class="sub-metric-val" style="color:${d.color}">$${d.balance.toLocaleString('en-US',{minimumFractionDigits:2})}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">P&L PA</span><span class="sub-metric-val" style="color:${pnlPA>=0?d.color:'#ff4060'}">${pnlPA>=0?'+':''}$${pnlPA.toFixed(2)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">DD disponible</span><span class="sub-metric-val" style="color:${ddLeft>=1800?d.color:ddLeft>=1000?'#ffb830':'#ff4060'}">$${ddLeft.toFixed(0)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Contratos</span><span class="sub-metric-val">${d.contracts}c activos</span></div>
+        </div>
+        <div style="margin-top:12px;padding:10px;background:rgba(255,140,66,0.06);border:1px solid rgba(255,140,66,0.2);border-radius:3px;font-size:11px;font-family:var(--mono);color:${d.color};">
+          Sin límite de payouts · Sin regla de consistencia · EOD trailing DD
         </div>
       </div>`;
   } else {
