@@ -1422,24 +1422,30 @@ table.trade-table tr:hover td {
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--apex);">
-        📈 Scaling contratos al fondear
+        🏆 Performance Account · Máx 6 payouts · Split 100%
       </div>
 
-      <div style="margin-top:10px; padding:10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px;">
-        <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.1em;">
-          <span>📈 Scaling al fondear</span><span style="color:var(--apex)">PA activa</span>
+      <!-- WITHDRAWAL TARGET APEX PA -->
+      <div class="withdrawal-section">
+        <div class="withdrawal-label">🎯 Target Retiro</div>
+        <div class="withdrawal-progress">
+          <span class="withdrawal-current">$50,299</span>
+          <span class="withdrawal-target">META: $52,600</span>
         </div>
-        <div style="font-family:var(--mono);font-size:9px;color:var(--apex);margin-top:4px;">Cuenta Performance Account — sin límite de payouts</div>
+        <div class="withdrawal-bar-track">
+          <div class="withdrawal-bar-fill" style="width: 11.5%"></div>
+        </div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Faltan $2,301 · Safety Net $52,100 · 1/5 días cal.</div>
       </div>
 
       <div class="card-stats">
         <div class="stat-item">
           <div class="stat-label">Contratos</div>
-          <div class="stat-value" style="color: var(--apex);">8c</div>
+          <div class="stat-value" style="color: var(--apex);">4c</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">Win Rate</div>
-          <div class="stat-value" style="color: var(--text);">50%</div>
+          <div class="stat-value" style="color: var(--text);">100%</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Total</div>
@@ -2115,7 +2121,7 @@ table.trade-table tr:hover td {
         <span class="risk-val">$480</span>
       </div>
       <div class="risk-row">
-        <span class="risk-acc" style="color:var(--apex)">APEX 8c</span>
+        <span class="risk-acc" style="color:var(--apex)">APEX PA 4c</span>
         <span class="risk-val">$480</span>
       </div>
       <div class="risk-row">
@@ -2486,14 +2492,14 @@ const ACCOUNT_DATA = {
     name: 'APEX PA', id: 'PAAPEX3875470000002', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
     type: 'Performance Account', firm: 'Apex Trader',
     balance: 50298.68, starting: 50000, contracts: 4,
-    mll: 48299, trail: null, targetRetiro: null,
+    mll: 48299, trail: 52100, targetRetiro: 52600,
     dailyLoss: 1000, maxRisk: 240,
-    consistency: null,
+    consistency: 100.0,
     fundingTarget: null,
     special: 'funded_pa',
     profitCiclo: 298.68,
-    diasCalificados: null,
-    notes: 'Performance Account fondeada. Sin límite de payouts. Arrancó el 01/04/2026. Operar con disciplina total — esta es la cuenta que genera flujo real.',
+    diasCalificados: 1,
+    notes: 'PA EOD $50K. Safety Net $52,100. Min balance retiro $52,600. 5 días calificados (≥$250/día). 50% consistency rule. Máx 6 payouts: P1=$1,500 · P2=$1,500 · P3=$2,000 · P4=$2,500. Split 100%.',
   },
 };
 
@@ -2599,19 +2605,29 @@ function openSubDash(acc) {
   } else if (d.special === 'funded_pa') {
     const ddLeft = d.balance - d.mll;
     const pnlPA = d.balance - d.starting;
+    const faltaRetiro = d.targetRetiro - d.balance;
+    const progRetiro = Math.max(0, Math.min((pnlPA / (d.targetRetiro - d.starting)) * 100, 100));
+    const diasCal = d.diasCalificados || 0;
+    const consScore = d.consistency || 0;
+    const consColor = consScore > 45 ? '#ff4060' : consScore > 35 ? '#ffb830' : d.color;
+    const limiteDiario = pnlPA * 0.499;
     specialHTML = `
       <div class="sub-special-card">
-        <div class="sub-special-title">🏆 Performance Account — Fondeada</div>
+        <div class="sub-special-title">🏆 Apex EOD PA — Reglas de Retiro</div>
         <div class="sub-special-grid">
-          <div class="sub-metric"><span class="sub-metric-label">Tipo</span><span class="sub-metric-val" style="color:${d.color}">PA Funded</span></div>
-          <div class="sub-metric"><span class="sub-metric-label">Arrancó</span><span class="sub-metric-val">01/04/2026</span></div>
-          <div class="sub-metric"><span class="sub-metric-label">Balance</span><span class="sub-metric-val" style="color:${d.color}">$${d.balance.toLocaleString('en-US',{minimumFractionDigits:2})}</span></div>
-          <div class="sub-metric"><span class="sub-metric-label">P&L PA</span><span class="sub-metric-val" style="color:${pnlPA>=0?d.color:'#ff4060'}">${pnlPA>=0?'+':''}$${pnlPA.toFixed(2)}</span></div>
-          <div class="sub-metric"><span class="sub-metric-label">DD disponible</span><span class="sub-metric-val" style="color:${ddLeft>=1800?d.color:ddLeft>=1000?'#ffb830':'#ff4060'}">$${ddLeft.toFixed(0)}</span></div>
-          <div class="sub-metric"><span class="sub-metric-label">Contratos</span><span class="sub-metric-val">${d.contracts}c activos</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Safety Net</span><span class="sub-metric-val" style="color:#ff4060">$${d.trail.toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Min balance retiro</span><span class="sub-metric-val" style="color:#ffb830">$${d.targetRetiro.toLocaleString()}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Días calificados</span><span class="sub-metric-val" style="color:${diasCal>=5?d.color:'#ffb830'}">${diasCal}/5 (≥$250/día)</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Consistency</span><span class="sub-metric-val" style="color:${consColor}">${consScore.toFixed(1)}% / 50%</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Límite diario $</span><span class="sub-metric-val" style="color:#ffb830">$${limiteDiario.toFixed(0)}</span></div>
+          <div class="sub-metric"><span class="sub-metric-label">Próximo payout</span><span class="sub-metric-val" style="color:${d.color}">P1 · $1,500</span></div>
         </div>
-        <div style="margin-top:12px;padding:10px;background:rgba(255,140,66,0.06);border:1px solid rgba(255,140,66,0.2);border-radius:3px;font-size:11px;font-family:var(--mono);color:${d.color};">
-          Sin límite de payouts · Sin regla de consistencia · EOD trailing DD
+        <div style="margin-top:14px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-bottom:5px;"><span>$50,000</span><span>MIN RETIRO $52,600</span></div>
+          <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div style="height:100%;width:${progRetiro.toFixed(1)}%;background:${d.color};border-radius:3px;transition:width 1s ease;box-shadow:0 0 6px ${d.color}44;"></div>
+          </div>
+          <div style="font-size:10px;font-family:var(--mono);color:var(--text-dim);margin-top:5px;text-align:right;">Falta $${faltaRetiro.toFixed(0)} · Split 100% · Máx 6 payouts</div>
         </div>
       </div>`;
   } else {
