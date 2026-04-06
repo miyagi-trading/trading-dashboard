@@ -1240,7 +1240,7 @@ table.trade-table tr:hover td {
   <div class="header-right">
     <div class="total-pnl-header">
       <div class="label">Portfolio P&L Total</div>
-      <div class="value" id="total-portfolio-pnl">+$840.02</div>
+      <div class="value" id="total-portfolio-pnl">+$201.02</div>
     </div>
     <div class="date-display">
       <div id="current-date"></div>
@@ -1260,7 +1260,7 @@ table.trade-table tr:hover td {
     <div class="cb-status">
       <div class="cb-item">
         <div class="cb-item-label">Trades Hoy</div>
-        <div class="cb-item-value cb-ok" id="cb-trades-today">2</div>
+        <div class="cb-item-value cb-stop" id="cb-trades-today">5</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Pérdidas Hoy</div>
@@ -1268,7 +1268,7 @@ table.trade-table tr:hover td {
       </div>
       <div class="cb-item">
         <div class="cb-item-label">P&L Hoy</div>
-        <div class="cb-item-value cb-stop" id="cb-pnl-today">-$490</div>
+        <div class="cb-item-value cb-stop" id="cb-pnl-today">-$639</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Estado</div>
@@ -1293,32 +1293,32 @@ table.trade-table tr:hover td {
 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
-        <div class="balance-value">$50,785.00</div>
-        <div class="balance-delta delta-pos">+$785.00 desde inicio</div>
+        <div class="balance-value">$51,138.00</div>
+        <div class="balance-delta delta-pos">+$1,138.00 desde inicio</div>
       </div>
 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,754 disponible · EOD</span>
+          <span class="dd-value dd-ok">$2,000 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 87.7%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,031 | EOD trailing</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,138 | EOD trailing</div>
       </div>
 
       <!-- WITHDRAWAL TARGET -->
       <div class="withdrawal-section">
         <div class="withdrawal-label">🎯 Target Retiro</div>
         <div class="withdrawal-progress">
-          <span class="withdrawal-current">$50,785</span>
+          <span class="withdrawal-current">$51,138</span>
           <span class="withdrawal-target">META: $53,000</span>
         </div>
         <div class="withdrawal-bar-track">
           <div class="withdrawal-bar-fill" style="width: 8.7%"></div>
         </div>
-        <div class="withdrawal-remaining">Faltan $2,215 para retiro seguro</div>
+        <div class="withdrawal-remaining">Faltan $1,862 para retiro seguro</div>
       </div>
 
       <div class="card-stats">
@@ -1332,7 +1332,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Total</div>
-          <div class="stat-value pnl-win">+$785</div>
+          <div class="stat-value pnl-win">+$1,138</div>
         </div>
       </div>
     </div>
@@ -1344,22 +1344,22 @@ table.trade-table tr:hover td {
           <div class="card-name blusky">BLUSKY</div>
           <div style="font-size:10px; color: var(--text-dim); font-family: var(--mono); margin-top:2px;">BSKELAUNCHGASTON63952</div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">Phase 2</span><span class="card-type type-active">● BUFFER</span></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">Phase 2</span><span class="card-type type-warning">⚠ DD BAJO</span></div>
       </div>
 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
-        <div class="balance-value">$50,000.00</div>
-        <div class="balance-delta delta-pos">+$0.00 desde inicio</div>
+        <div class="balance-value">$49,232.80</div>
+        <div class="balance-delta delta-neg">-$767.20 desde inicio</div>
       </div>
 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$2,000 disponible · EOD</span>
+          <span class="dd-value dd-warn">$1,233 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 100%"></div>
+          <div class="dd-bar-fill fill-warn" style="width: 61.6%"></div>
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,000 | EOD trailing</div>
       </div>
@@ -1370,7 +1370,7 @@ table.trade-table tr:hover td {
 
       <div style="margin-top:10px; padding:10px; background: var(--bg3); border: 1px solid var(--border); border-radius:3px;">
         <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.1em;">
-          <span>🎯 Target Buffer</span><span style="color:var(--blusky)">$0 / $3,000</span>
+          <span>🎯 Target Buffer</span><span style="color:var(--blusky)">-$767 / $3,000</span>
         </div>
         <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;">
           <div style="height:100%;width:0%;background:var(--blusky);border-radius:2px;transition:width 1s ease;box-shadow:0 0 6px rgba(77,166,255,0.4);"></div>
@@ -1389,7 +1389,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Total</div>
-          <div class="stat-value pnl-win">+$0</div>
+          <div class="stat-value pnl-loss">-$767</div>
         </div>
       </div>
     </div>
@@ -1406,19 +1406,19 @@ table.trade-table tr:hover td {
 
       <div class="balance-display">
         <div class="balance-label">Balance Actual</div>
-        <div class="balance-value">$50,054.52</div>
-        <div class="balance-delta delta-pos">+$54.52 desde inicio</div>
+        <div class="balance-value">$49,830.20</div>
+        <div class="balance-delta delta-neg">-$169.80 desde inicio</div>
       </div>
 
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,756 disponible · EOD</span>
+          <span class="dd-value dd-ok">$1,776 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 87.8%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 88.8%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,299 | EOD trailing</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,054 | EOD trailing</div>
       </div>
 
       <div style="margin-top:10px; padding:8px 10px; background: rgba(255,140,66,0.05); border: 1px solid rgba(255,140,66,0.15); border-radius:3px; font-size:10px; font-family: var(--mono); color: var(--apex);">
@@ -1429,13 +1429,13 @@ table.trade-table tr:hover td {
       <div class="withdrawal-section">
         <div class="withdrawal-label">🎯 Target Retiro</div>
         <div class="withdrawal-progress">
-          <span class="withdrawal-current">$50,055</span>
+          <span class="withdrawal-current">$49,830</span>
           <span class="withdrawal-target">META: $52,600</span>
         </div>
         <div class="withdrawal-bar-track">
           <div class="withdrawal-bar-fill" style="width: 11.5%"></div>
         </div>
-        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Faltan $3,045 · Safety Net $52,100 · 1/5 días cal.</div>
+        <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">Faltan $3,270 · Safety Net $52,100 · 1/5 días cal.</div>
       </div>
 
       <div class="card-stats">
@@ -1449,7 +1449,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Total</div>
-          <div class="stat-value pnl-win">+$55</div>
+          <div class="stat-value pnl-loss">-$170</div>
         </div>
       </div>
     </div>
@@ -1939,6 +1939,42 @@ table.trade-table tr:hover td {
           <td class="pnl-loss">-30.00</td><td class="pnl-loss">-$244.16</td>
           <td><span class="exit-loss">Stop</span></td>
         </tr>
+        <!-- 4/06/26 -->
+        <tr class="trade-row" data-account="lucid" data-result="win">
+          <td>06/04/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td><span class="side-long">LONG</span></td><td>4c</td>
+          <td>24,331.25</td><td>24,387.00</td>
+          <td class="pnl-win">+55.75</td><td class="pnl-win">+$353.00</td>
+          <td><span class="exit-win">Parcial+Runner</span></td>
+        </tr>
+        <tr class="trade-row" data-account="blusky" data-result="win">
+          <td>06/04/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td><span class="side-long">LONG</span></td><td>8c</td>
+          <td>24,314.25</td><td>24,344.25</td>
+          <td class="pnl-win">+30.00</td><td class="pnl-win">+$248.00</td>
+          <td><span class="exit-win">Parcial+BE</span></td>
+        </tr>
+        <tr class="trade-row" data-account="blusky" data-result="loss">
+          <td>06/04/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td><span class="side-short">SHORT</span></td><td>8c</td>
+          <td>24,257.00</td><td>24,288.25</td>
+          <td class="pnl-loss">-31.25</td><td class="pnl-loss">-$500.00</td>
+          <td><span class="exit-loss">Stop ⚠</span></td>
+        </tr>
+        <tr class="trade-row" data-account="blusky" data-result="loss">
+          <td>06/04/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td><span class="side-short">SHORT</span></td><td>8c</td>
+          <td>24,273.50</td><td>24,303.75</td>
+          <td class="pnl-loss">-30.25</td><td class="pnl-loss">-$484.00</td>
+          <td><span class="exit-loss">Stop ⚠</span></td>
+        </tr>
+        <tr class="trade-row" data-account="apex" data-result="loss">
+          <td>06/04/2026</td><td><span class="td-account acc-apex">APEX PA</span></td>
+          <td><span class="side-long">LONG</span></td><td>4c</td>
+          <td>24,373.75</td><td>24,343.50</td>
+          <td class="pnl-loss">-30.25</td><td class="pnl-loss">-$242.00</td>
+          <td><span class="exit-loss">Stop</span></td>
+        </tr>
       </tbody>
     </table>
     </div>
@@ -1950,7 +1986,7 @@ table.trade-table tr:hover td {
     <div class="sequence-meta">
       <div class="seq-stat">
         <div class="seq-stat-label">Total trades</div>
-        <div class="seq-stat-value" style="color:var(--text)">53</div>
+        <div class="seq-stat-value" style="color:var(--text)">58</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Racha actual</div>
@@ -1966,7 +2002,7 @@ table.trade-table tr:hover td {
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Ratio W:L</div>
-        <div class="seq-stat-value" style="color:var(--text)">33:19</div>
+        <div class="seq-stat-value" style="color:var(--text)">34:22</div>
       </div>
       <div style="display:flex; align-items:center; margin-left:auto;">
         <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 1 win</span>
@@ -2020,6 +2056,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-date-label">31/3</div>
         <div class="heatmap-date-label">1/4</div>
         <div class="heatmap-date-label">2/4</div>
+        <div class="heatmap-date-label">6/4</div>
       </div>
 
       <!-- LUCID row -->
@@ -2041,6 +2078,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell loss" title="-$254">-$254</div>
         <div class="heatmap-cell empty">—</div>
         <div class="heatmap-cell loss" title="-$246">-$246</div>
+        <div class="heatmap-cell win" title="+$353">+$353</div>
       </div>
 
       <!-- BLUSKY row -->
@@ -2062,6 +2100,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win" title="+$414">+$414</div>
         <div class="heatmap-cell win" title="+$871">+$871</div>
         <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss" title="-$767">-$767</div>
       </div>
 
       <!-- APEX row -->
@@ -2083,6 +2122,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win" title="+$8">+$8</div>
         <div class="heatmap-cell win" title="+$299">+$299</div>
         <div class="heatmap-cell loss" title="-$244">-$244</div>
+        <div class="heatmap-cell loss" title="-$242">-$242</div>
       </div>
 
       <!-- TOTAL row -->
@@ -2104,6 +2144,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win">+$171</div>
         <div class="heatmap-cell win">+$1,169</div>
         <div class="heatmap-cell loss">-$490</div>
+        <div class="heatmap-cell loss">-$639</div>
       </div>
     </div>
   </div>
@@ -2116,15 +2157,15 @@ table.trade-table tr:hover td {
       <div class="risk-card-label">DD Disponible vs Límite</div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--lucid)">LUCID</span>
-        <span class="risk-val" style="color:#ffb830">$1,754</span>
-      </div>
-      <div class="risk-row">
-        <span class="risk-acc" style="color:var(--blusky)">BLUSKY</span>
         <span class="risk-val" style="color:var(--win)">$2,000</span>
       </div>
       <div class="risk-row">
+        <span class="risk-acc" style="color:var(--blusky)">BLUSKY</span>
+        <span class="risk-val" style="color:#ffb830">$1,233</span>
+      </div>
+      <div class="risk-row">
         <span class="risk-acc" style="color:var(--apex)">APEX PA</span>
-        <span class="risk-val" style="color:#ffb830">$1,756</span>
+        <span class="risk-val" style="color:var(--win)">$1,776</span>
       </div>
 
     </div>
@@ -2159,7 +2200,7 @@ table.trade-table tr:hover td {
       <div class="risk-card-label">Lucid — Camino al retiro</div>
       <div class="risk-row">
         <span class="risk-acc">Balance actual</span>
-        <span class="risk-val" style="color:var(--lucid)">$50,785</span>
+        <span class="risk-val" style="color:var(--lucid)">$51,138</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc">Target seguro</span>
@@ -2167,7 +2208,7 @@ table.trade-table tr:hover td {
       </div>
       <div class="risk-row">
         <span class="risk-acc">Falta</span>
-        <span class="risk-val" style="color:#ffb830">$2,215</span>
+        <span class="risk-val" style="color:#ffb830">$1,862</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc">~Trades @+1R</span>
@@ -2184,11 +2225,11 @@ table.trade-table tr:hover td {
       <div class="risk-card-label">Consistencia del período</div>
       <div class="risk-row">
         <span class="risk-acc">Días operados</span>
-        <span class="risk-val">15</span>
+        <span class="risk-val">16</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc">Días verdes</span>
-        <span class="risk-val" style="color:var(--win)">11 / 15</span>
+        <span class="risk-val" style="color:var(--win)">12 / 16</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc">Días rojos</span>
@@ -2273,13 +2314,19 @@ const TRADES = [
   // 4/02/26
   { date:'4/2/26',  acc:'lucid',  side:'B', entry:24175.50, exit:24145.25, c:4,  pnl:-246.00,  via:'Stop' },
   { date:'4/2/26',  acc:'apex',   side:'S', entry:23940.25, exit:23970.25, c:4,  pnl:-244.16,  via:'Stop' },
+  // 4/06/26
+  { date:'4/6/26',  acc:'lucid',  side:'B', entry:24331.25, exit:24387.00, c:4,  pnl:353.00,   via:'Parcial+Runner' },
+  { date:'4/6/26',  acc:'blusky', side:'B', entry:24314.25, exit:24344.25, c:8,  pnl:248.00,   via:'Parcial+BE' },
+  { date:'4/6/26',  acc:'blusky', side:'S', entry:24257.00, exit:24288.25, c:8,  pnl:-500.00,  via:'Stop ⚠' },
+  { date:'4/6/26',  acc:'blusky', side:'S', entry:24273.50, exit:24303.75, c:8,  pnl:-484.00,  via:'Stop ⚠' },
+  { date:'4/6/26',  acc:'apex',   side:'B', entry:24373.75, exit:24343.50, c:4,  pnl:-242.00,  via:'Stop' },
 ];
 
 const ACC_COLOR = { lucid:'#00d4aa', blusky:'#4da6ff', apex:'#ff8c42', alpha:'#ff4488' };
 const ACC_LABEL = { lucid:'LUCID', blusky:'BLUSKY', apex:'APEX', alpha:'ALPHA' };
 
 // Date order — dd/mm/aa format for display
-const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26','3/25/26','3/26/26','3/27/26','3/30/26','3/31/26','4/1/26','4/2/26'];
+const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26','3/25/26','3/26/26','3/27/26','3/30/26','3/31/26','4/1/26','4/2/26','4/6/26'];
 
 function fmtDate(d) {
   // Convert m/d/yy → dd/mm/20yy
@@ -2434,7 +2481,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     const balanceMap = [
       { sel: '.account-card.lucid .balance-value',  val: 51031.00 },
-      { sel: '.account-card.blusky .balance-value', val: 50000.00 },
+      { sel: '.account-card.blusky .balance-value', val: 49232.80 },
       { sel: '.account-card.apex .balance-value',   val: 50298.68 },
       { sel: '.account-card.alpha .balance-value',  val: 47981.28 },
     ];
@@ -2501,26 +2548,26 @@ const ACCOUNT_DATA = {
   blusky: {
     name: 'BLUSKY', id: 'BSKELAUNCHGASTON63952', color: '#4da6ff', colorDim: 'rgba(77,166,255,0.1)',
     type: 'Evaluation', firm: 'BluSky Trading',
-    balance: 50000.00, starting: 50000, contracts: 8,
+    balance: 49232.80, starting: 50000, contracts: 8,
     mll: 47000, trail: null, targetRetiro: null,
     dailyLoss: 1000, maxRisk: 480,
     consistency: 26.79,
     fundingTarget: 3000,
     special: 'buffer',
-    profitCiclo: 0,
+    profitCiclo: -767.20,
     diasCalificados: null,
     notes: 'Phase 2 — BluLive Buffer. Meta: +$3,000 para pasar a Sim Funded. Consistency 30%. Sin daily loss limit. Al llegar a $53,000 cerrar posiciones y esperar transición a Phase 3 (Sim Funded). Split 90%, sin profit caps.',
   },
   apex: {
     name: 'APEX PA', id: 'PAAPEX3875470000002', color: '#ff8c42', colorDim: 'rgba(255,140,66,0.1)',
     type: 'Performance Account', firm: 'Apex Trader',
-    balance: 50054.52, starting: 50000, contracts: 4,
+    balance: 49830.20, starting: 50000, contracts: 4,
     mll: 48299, trail: 52100, targetRetiro: 52600,
     dailyLoss: 1000, maxRisk: 240,
     consistency: 100.0,
     fundingTarget: null,
     special: 'funded_pa',
-    profitCiclo: 54.52,
+    profitCiclo: -169.80,
     diasCalificados: 1,
     notes: 'PA EOD $50K. Safety Net $52,100. Min balance retiro $52,600. 5 días calificados (≥$250/día). 50% consistency rule. Máx 6 payouts: P1=$1,500 · P2=$1,500 · P3=$2,000 · P4=$2,500. Split 100%.',
   },
