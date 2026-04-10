@@ -1328,7 +1328,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">Win Rate</div>
-          <div class="stat-value" style="color: var(--text);">66.7%</div>
+          <div class="stat-value" style="color: var(--text);">55.6%</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
@@ -1385,7 +1385,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">Win Rate</div>
-          <div class="stat-value" style="color: var(--text);">66.7%</div>
+          <div class="stat-value" style="color: var(--text);">64.3%</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
@@ -1445,7 +1445,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">Win Rate</div>
-          <div class="stat-value" style="color: var(--text);">50%</div>
+          <div class="stat-value" style="color: var(--text);">55.6%</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
@@ -2151,7 +2151,7 @@ table.trade-table tr:hover td {
     <div class="sequence-meta">
       <div class="seq-stat">
         <div class="seq-stat-label">Total trades</div>
-        <div class="seq-stat-value" style="color:var(--text)">74</div>
+        <div class="seq-stat-value" style="color:var(--text)">79</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Racha actual</div>
@@ -2159,7 +2159,7 @@ table.trade-table tr:hover td {
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Mejor racha W</div>
-        <div class="seq-stat-value" style="color:var(--win)">W5</div>
+        <div class="seq-stat-value" style="color:var(--win)">W6</div>
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Peor racha L</div>
@@ -2167,10 +2167,10 @@ table.trade-table tr:hover td {
       </div>
       <div class="seq-stat">
         <div class="seq-stat-label">Ratio W:L</div>
-        <div class="seq-stat-value" style="color:var(--text)">43:27</div>
+        <div class="seq-stat-value" style="color:var(--text)">46:32</div>
       </div>
       <div style="display:flex; align-items:center; margin-left:auto;">
-        <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 1 win</span>
+        <span class="streak-badge streak-win" id="streak-badge">🔥 Racha activa: 1 wins</span>
       </div>
     </div>
 
@@ -2225,6 +2225,7 @@ table.trade-table tr:hover td {
         <div class="heatmap-date-label">7/4</div>
         <div class="heatmap-date-label">8/4</div>
         <div class="heatmap-date-label">9/4</div>
+        <div class="heatmap-date-label">10/4</div>
       </div>
 
       <!-- LUCID row -->
@@ -2249,7 +2250,8 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell win" title="+$353">+$353</div>
         <div class="heatmap-cell loss" title="-$250">-$250</div>
         <div class="heatmap-cell win" title="+$14">+$14</div>
-        <div class="heatmap-cell win" title="+$31">+$31</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss" title="-$247">-$247</div>
       </div>
 
       <!-- BLUSKY row -->
@@ -2274,7 +2276,8 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell loss" title="-$767">-$767</div>
         <div class="heatmap-cell loss" title="-$85">-$85</div>
         <div class="heatmap-cell win" title="+$512">+$512</div>
-        <div class="heatmap-cell win" title="+$31">+$31</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss" title="-$523">-$523</div>
       </div>
 
       <!-- APEX row -->
@@ -2299,7 +2302,8 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell loss" title="-$242">-$242</div>
         <div class="heatmap-cell win" title="+$223">+$223</div>
         <div class="heatmap-cell loss" title="-$488">-$488</div>
-        <div class="heatmap-cell win" title="+$247">+$247</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss" title="-$333">-$333</div>
       </div>
 
       <!-- TOTAL row -->
@@ -2324,7 +2328,8 @@ table.trade-table tr:hover td {
         <div class="heatmap-cell loss">-$639</div>
         <div class="heatmap-cell loss">-$113</div>
         <div class="heatmap-cell win">+$37</div>
-        <div class="heatmap-cell win">+$309</div>
+        <div class="heatmap-cell empty">—</div>
+        <div class="heatmap-cell loss">-$1,103</div>
       </div>
     </div>
   </div>
@@ -2519,13 +2524,21 @@ const TRADES = [
   { date:'4/9/26',  acc:'blusky', side:'S', entry:25044.00, exit:25074.25, c:8,  pnl:-484.00,  via:'Stop' },
   { date:'4/9/26',  acc:'blusky', side:'S', entry:25079.00, exit:25042.00, c:8,  pnl:536.00,   via:'Parcial+Runner' },
   { date:'4/9/26',  acc:'apex',   side:'S', entry:25074.75, exit:25042.00, c:4,  pnl:251.00,   via:'Parcial+Runner' },
+  // 4/10/26
+  { date:'4/10/26', acc:'lucid',  side:'S', entry:25316.75, exit:25347.50, c:4,  pnl:-246.00,  via:'Stop' },
+  { date:'4/10/26', acc:'lucid',  side:'S', entry:25328.50, exit:25310.50, c:4,  pnl:144.00,   via:'Parcial+Runner' },
+  { date:'4/10/26', acc:'blusky', side:'S', entry:25321.00, exit:25351.75, c:8,  pnl:-492.00,  via:'Stop' },
+  { date:'4/10/26', acc:'blusky', side:'S', entry:25324.50, exit:25311.00, c:8,  pnl:108.00,   via:'Parcial+Runner' },
+  { date:'4/10/26', acc:'apex',   side:'B', entry:25331.50, exit:25300.50, c:4,  pnl:-248.00,  via:'Stop' },
+  { date:'4/10/26', acc:'apex',   side:'B', entry:25341.75, exit:25311.00, c:4,  pnl:-246.00,  via:'Stop' },
+  { date:'4/10/26', acc:'apex',   side:'B', entry:25342.25, exit:25365.75, c:4,  pnl:188.00,   via:'Parcial+Runner' },
 ];
 
 const ACC_COLOR = { lucid:'#00d4aa', blusky:'#4da6ff', apex:'#ff8c42', alpha:'#ff4488' };
 const ACC_LABEL = { lucid:'LUCID', blusky:'BLUSKY', apex:'APEX', alpha:'ALPHA' };
 
 // Date order — dd/mm/aa format for display
-const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26','3/25/26','3/26/26','3/27/26','3/30/26','3/31/26','4/1/26','4/2/26','4/6/26','4/7/26','4/8/26','4/9/26'];
+const DATE_ORDER = ['3/12/26','3/13/26','3/16/26','3/17/26','3/18/26','3/19/26','3/20/26','3/23/26','3/24/26','3/25/26','3/26/26','3/27/26','3/30/26','3/31/26','4/1/26','4/2/26','4/6/26','4/7/26','4/8/26','4/9/26','4/10/26'];
 
 function fmtDate(d) {
   // Convert m/d/yy → dd/mm/20yy
