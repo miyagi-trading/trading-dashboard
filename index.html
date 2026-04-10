@@ -1260,15 +1260,15 @@ table.trade-table tr:hover td {
     <div class="cb-status">
       <div class="cb-item">
         <div class="cb-item-label">Trades Hoy</div>
-        <div class="cb-item-value cb-stop" id="cb-trades-today">5</div>
+        <div class="cb-item-value cb-stop" id="cb-trades-today">7</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Pérdidas Hoy</div>
-        <div class="cb-item-value cb-stop" id="cb-losses-today">2</div>
+        <div class="cb-item-value cb-stop" id="cb-losses-today">4</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">P&L Hoy</div>
-        <div class="cb-item-value cb-stop" id="cb-pnl-today">+$309</div>
+        <div class="cb-item-value cb-stop" id="cb-pnl-today">-$1,103</div>
       </div>
       <div class="cb-item">
         <div class="cb-item-label">Estado</div>
@@ -1300,10 +1300,10 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,644 disponible · EOD</span>
+          <span class="dd-value dd-ok">$1,397 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 82.2%"></div>
+          <div class="dd-bar-fill fill-ok" style="width: 69.9%"></div>
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $49,289 | EOD trailing</div>
       </div>
@@ -1332,7 +1332,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
-          <div class="stat-value pnl-win">+$31</div>
+          <div class="stat-value pnl-loss">-$247</div>
         </div>
       </div>
     </div>
@@ -1344,7 +1344,7 @@ table.trade-table tr:hover td {
           <div class="card-name blusky">BLUSKY</div>
           <div style="font-size:10px; color: var(--text-dim); font-family: var(--mono); margin-top:2px;">BSKELAUNCHGASTON63952</div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">Phase 2</span><span class="card-type type-active">● BUFFER</span></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">Phase 2</span><span class="card-type type-warning">⚠ DD BAJO</span></div>
       </div>
 
       <div class="balance-display">
@@ -1356,10 +1356,10 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,691 disponible · EOD</span>
+          <span class="dd-value dd-warn">$1,167 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 84.5%"></div>
+          <div class="dd-bar-fill fill-warn" style="width: 58.4%"></div>
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,000 | EOD trailing</div>
       </div>
@@ -1389,7 +1389,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
-          <div class="stat-value pnl-win">+$31</div>
+          <div class="stat-value pnl-loss">-$523</div>
         </div>
       </div>
     </div>
@@ -1401,7 +1401,7 @@ table.trade-table tr:hover td {
           <div class="card-name apex">APEX</div>
           <div style="font-size:10px; color: var(--text-dim); font-family: var(--mono); margin-top:2px;">PAAPEX3875470000002</div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">PA Funded</span><span class="card-type type-active">● ACTIVA</span></div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><span class="card-type type-funded">PA Funded</span><span class="card-type type-warning">⚠ DD BAJO</span></div>
       </div>
 
       <div class="balance-display">
@@ -1413,10 +1413,10 @@ table.trade-table tr:hover td {
       <div class="dd-section">
         <div class="dd-label-row">
           <span class="dd-label">DD Disponible</span>
-          <span class="dd-value dd-ok">$1,513 disponible · EOD</span>
+          <span class="dd-value dd-warn">$1,180 disponible · EOD</span>
         </div>
         <div class="dd-bar-track">
-          <div class="dd-bar-fill fill-ok" style="width: 75.6%"></div>
+          <div class="dd-bar-fill fill-warn" style="width: 59%"></div>
         </div>
         <div style="font-size:9px; font-family: var(--mono); color: var(--text-dim); margin-top:4px;">MLL actual: $48,299 | EOD trailing</div>
       </div>
@@ -1449,7 +1449,7 @@ table.trade-table tr:hover td {
         </div>
         <div class="stat-item">
           <div class="stat-label">P&L Hoy</div>
-          <div class="stat-value pnl-win">+$247</div>
+          <div class="stat-value pnl-loss">-$333</div>
         </div>
       </div>
     </div>
@@ -2090,6 +2090,56 @@ table.trade-table tr:hover td {
           <td class="pnl-win">+32.75</td><td class="pnl-win">+$251.00</td>
           <td><span class="exit-win">Parcial+Runner</span></td>
         </tr>
+        <!-- 4/10/26 -->
+        <tr class="trade-row" data-account="lucid" data-result="loss">
+          <td>10/04/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td><span class="side-short">SHORT</span></td><td>4c</td>
+          <td>25,316.75</td><td>25,347.50</td>
+          <td class="pnl-loss">-30.75</td><td class="pnl-loss">-$246.00</td>
+          <td><span class="exit-loss">Stop</span></td>
+        </tr>
+        <tr class="trade-row" data-account="lucid" data-result="win">
+          <td>10/04/2026</td><td><span class="td-account acc-lucid">LUCID</span></td>
+          <td><span class="side-short">SHORT</span></td><td>4c</td>
+          <td>25,328.50</td><td>25,310.50</td>
+          <td class="pnl-win">+18.00</td><td class="pnl-win">+$144.00</td>
+          <td><span class="exit-win">Parcial+Runner</span></td>
+        </tr>
+        <tr class="trade-row" data-account="blusky" data-result="loss">
+          <td>10/04/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td><span class="side-short">SHORT</span></td><td>8c</td>
+          <td>25,321.00</td><td>25,351.75</td>
+          <td class="pnl-loss">-30.75</td><td class="pnl-loss">-$492.00</td>
+          <td><span class="exit-loss">Stop</span></td>
+        </tr>
+        <tr class="trade-row" data-account="blusky" data-result="win">
+          <td>10/04/2026</td><td><span class="td-account acc-blusky">BLUSKY</span></td>
+          <td><span class="side-short">SHORT</span></td><td>8c</td>
+          <td>25,324.50</td><td>25,311.00</td>
+          <td class="pnl-win">+13.50</td><td class="pnl-win">+$108.00</td>
+          <td><span class="exit-win">Parcial+Runner</span></td>
+        </tr>
+        <tr class="trade-row" data-account="apex" data-result="loss">
+          <td>10/04/2026</td><td><span class="td-account acc-apex">APEX PA</span></td>
+          <td><span class="side-long">LONG</span></td><td>4c</td>
+          <td>25,331.50</td><td>25,300.50</td>
+          <td class="pnl-loss">-31.00</td><td class="pnl-loss">-$248.00</td>
+          <td><span class="exit-loss">Stop</span></td>
+        </tr>
+        <tr class="trade-row" data-account="apex" data-result="loss">
+          <td>10/04/2026</td><td><span class="td-account acc-apex">APEX PA</span></td>
+          <td><span class="side-long">LONG</span></td><td>4c</td>
+          <td>25,341.75</td><td>25,311.00</td>
+          <td class="pnl-loss">-30.75</td><td class="pnl-loss">-$246.00</td>
+          <td><span class="exit-loss">Stop</span></td>
+        </tr>
+        <tr class="trade-row" data-account="apex" data-result="win">
+          <td>10/04/2026</td><td><span class="td-account acc-apex">APEX PA</span></td>
+          <td><span class="side-long">LONG</span></td><td>4c</td>
+          <td>25,342.25</td><td>25,365.75</td>
+          <td class="pnl-win">+23.50</td><td class="pnl-win">+$188.00</td>
+          <td><span class="exit-win">Parcial+Runner</span></td>
+        </tr>
       </tbody>
     </table>
     </div>
@@ -2287,15 +2337,15 @@ table.trade-table tr:hover td {
       <div class="risk-card-label">DD Disponible vs Límite</div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--lucid)">LUCID</span>
-        <span class="risk-val" style="color:var(--win)">$1,644</span>
+        <span class="risk-val" style="color:var(--win)">$1,397</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--blusky)">BLUSKY</span>
-        <span class="risk-val" style="color:var(--win)">$1,691</span>
+        <span class="risk-val" style="color:#ffb830">$1,167</span>
       </div>
       <div class="risk-row">
         <span class="risk-acc" style="color:var(--apex)">APEX PA</span>
-        <span class="risk-val" style="color:var(--win)">$1,513</span>
+        <span class="risk-val" style="color:#ffb830">$1,180</span>
       </div>
 
     </div>
